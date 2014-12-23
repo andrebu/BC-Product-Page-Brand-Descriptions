@@ -4,17 +4,15 @@ BigCommerce-Product-Page-Brand-Descriptions
 BigCommerce Product Page Brand Descriptions that are based on the brand of the product and are dynamically pulled from a separate page and added to the product page
 
 ================================================================================================
+
+To Do
+-----
+1. Product type inside the brand description
+
 ================================================================================================
 ================================================================================================
 
-
-
-
-
-
-
-
-#4.  Dynamic Brand Descriptions
+4.  Dynamic Brand Descriptions
 4.1 - Add all Brand descriptions to the /brand-descriptions/ page.
 4.2 - Delete all static brand entries from all products to avoid duplicates
 4.3 - Transfer JavaScript code over to DankStop (Place %%Panel.ProductPageBrandDescriptions.html%% in Panels/ProductDescription.html, right after "%%GLOBAL_ProductDescriptionOptimizerNoScriptTag%%")
