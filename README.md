@@ -161,6 +161,11 @@ To get this to work, you just need to require the module once per run-time, like
     Just install and it'l do the work for you!
 
 
+## Resources
+
+1. [Get selected element's outer HTML](http://stackoverflow.com/questions/2419749/get-selected-elements-outer-html)
+2. [Change certain paragraph text in jQuery?](http://stackoverflow.com/questions/10256795/change-certain-paragraph-text-in-jquery)
+
 ## Other BigCommerce modules
 
 * [BigCommerce Product Page Demo Videos](https://github.com/iamandrebulatov/BigCommerce-Product-Page-Demo-Videos)
