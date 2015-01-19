@@ -29,7 +29,7 @@
       }
 	  $.when(ajax3()).done(function(a3){
         var dankStopBoxProduct = $('.productTypeSpan');
-        	currentProductType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Value').text().toLowerCase();
+        	currentProductType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Value').text().trim().toLowerCase();
 //        	currentProductType = $('.JointSizeHeightContainer .Label:contains("Type")').find('.Value').text();
 /*
         	productTypes = ["ashcatcher", 
