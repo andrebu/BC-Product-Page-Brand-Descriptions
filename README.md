@@ -7,7 +7,8 @@ BigCommerce Product Page Brand Descriptions that are based on the brand of the p
 
 ## Installation
 
-1. Add all Brand descriptions to the /brand-descriptions/ page.  The format is as follows:
+1. Place %%Panel.ProductPageBrandDescriptions.html%% in Panels/ProductDescription.html, right after "%%GLOBAL_ProductDescriptionOptimizerNoScriptTag%%"
+2. Add all Brand descriptions to the /brand-descriptions/ page.  The format is as follows:
 
 ```HTML
 <div id="DankStopTheBest">
@@ -44,8 +45,6 @@ BigCommerce Product Page Brand Descriptions that are based on the brand of the p
 </p>
 <hr class="top-sep" />
 ```
-
-2. Place %%Panel.ProductPageBrandDescriptions.html%% in Panels/ProductDescription.html, right after "%%GLOBAL_ProductDescriptionOptimizerNoScriptTag%%"
 
 
 ================================================================================================
