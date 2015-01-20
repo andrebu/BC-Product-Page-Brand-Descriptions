@@ -91,6 +91,7 @@ To Do
 3. [jQuery create CSS rule / class @ runtime](http://stackoverflow.com/questions/1212500/jquery-create-css-rule-class-runtime/2076345#2076345)  
 4. [Best way to add new css rules with jquery?](http://stackoverflow.com/questions/14136042/best-way-to-add-new-css-rules-with-jquery)  
 5. [CSS3 :nth-child() Selector](http://www.w3schools.com/cssref/sel_nth-child.asp)
+6. [How do you check for an empty string in JavaScript?](http://stackoverflow.com/questions/154059/how-do-you-check-for-an-empty-string-in-javascript)
 
 
 ================================================================================================
