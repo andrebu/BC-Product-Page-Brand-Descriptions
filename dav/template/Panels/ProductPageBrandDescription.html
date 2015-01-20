@@ -52,7 +52,7 @@
 		}\
 		</style>')
 		.appendTo('head');
-/* Find brand of current product, check the brand page for the matching brand descipriton, and add description to the DOM */
+/* Find brand of current product and check the brand page for the matching brand descipriton and add description to the DOM */
 	  function ajax3() {
         return $.ajax({
           url: "/brand-descriptions/" 
@@ -74,35 +74,13 @@
                           $('.ProductDescriptionContainer').append(brandContent);
                     }        
                 }                                
-/*
-            }).fail(function() { 
-			    	return;
-*/
 		    });                             
         });
       }
+/* When AJAX is done, if product type in custom field value #3 is not empty, then replace the word "product" with the product type in CF#3 */
 	  $.when(ajax3()).done(function(a3){
         var dankStopBoxProduct = $('.productTypeSpan');
         	currentProductType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Value').text().trim().toLowerCase();
-        	console.log('currentProductType 1: '+currentProductType);
-/*
-        	console.log('currentProductType 1: '+currentProductType);
-        	currentProductType2 = $('.JointSizeHeightContainer .Label:contains("Type")').find('.Value').text();
-        	console.log('currentProductType 2: ')+currentProductType2;
-*/
-/*
-        	productTypes = ["ashcatcher", 
-        					"bubbler", 
-        					"dab rig", 
-        					"glass pipe", 
-        					"grinder", 
-        					"recycler", 
-        					"smoking accessory", 
-        					"titanium product", 
-        					"vaporizer", 
-        					"quartz product"];
-*/
-//		if((currentProductType !== null) && (currentProductType !== undefined)){
 		if((!currentProductType) && (currentProductType !== "")){
 			dankStopBoxProduct.text(currentProductType); 
 		}
