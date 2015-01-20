@@ -56,13 +56,6 @@ BigCommerce Product Page Brand Descriptions that are based on the brand of the p
 
 ================================================================================================
 
-## Resources
-
-1. [Get selected element's outer HTML](http://stackoverflow.com/questions/2419749/get-selected-elements-outer-html)  
-2. [Change certain paragraph text in jQuery?](http://stackoverflow.com/questions/10256795/change-certain-paragraph-text-in-jquery)  
-3. [jQuery create CSS rule / class @ runtime](http://stackoverflow.com/questions/1212500/jquery-create-css-rule-class-runtime/2076345#2076345)  
-4. [Best way to add new css rules with jquery?](http://stackoverflow.com/questions/14136042/best-way-to-add-new-css-rules-with-jquery)  
-
 ## Other BigCommerce modules
 
 * [BigCommerce Product Page Demo Videos](https://github.com/iamandrebulatov/BigCommerce-Product-Page-Demo-Videos)
@@ -89,7 +82,15 @@ The absolute best thing to do is to sign up with [ChangeTip](//changetip.com) or
 To Do
 -----
 1. ~~Dynamic Product type inside DankStop description description based on the type of the current product~~  
-2. ~~Improve CSS~~  
+2. ~~Improve CSS~~   
+
+## Resources
+
+1. [Get selected element's outer HTML](http://stackoverflow.com/questions/2419749/get-selected-elements-outer-html)  
+2. [Change certain paragraph text in jQuery?](http://stackoverflow.com/questions/10256795/change-certain-paragraph-text-in-jquery)  
+3. [jQuery create CSS rule / class @ runtime](http://stackoverflow.com/questions/1212500/jquery-create-css-rule-class-runtime/2076345#2076345)  
+4. [Best way to add new css rules with jquery?](http://stackoverflow.com/questions/14136042/best-way-to-add-new-css-rules-with-jquery)  
+5. [CSS3 :nth-child() Selector](http://www.w3schools.com/cssref/sel_nth-child.asp)
 
 
 ================================================================================================
