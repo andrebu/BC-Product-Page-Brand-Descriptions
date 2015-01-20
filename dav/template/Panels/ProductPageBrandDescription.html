@@ -47,6 +47,9 @@
 		.JointSizeHeightContainer .DetailRow:nth-child(3) {\
 			display:none;\
 		}\
+		.JointSizeHeightContainer .ProductOtherDetails .ProductDetailsGrid .DetailRow:nth-child(2) {\
+		    padding-left: 10%; \
+		}\
 		</style>')
 		.appendTo('head');
 /* Find brand of current product, check the brand page for the matching brand descipriton, and add description to the DOM */
@@ -81,6 +84,7 @@
 	  $.when(ajax3()).done(function(a3){
         var dankStopBoxProduct = $('.productTypeSpan');
         	currentProductType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Value').text().trim().toLowerCase();
+        	console.log('currentProductType 1: '+currentProductType);
 /*
         	console.log('currentProductType 1: '+currentProductType);
         	currentProductType2 = $('.JointSizeHeightContainer .Label:contains("Type")').find('.Value').text();
@@ -98,7 +102,10 @@
         					"vaporizer", 
         					"quartz product"];
 */
-		dankStopBoxProduct.text(currentProductType); 
+//		if((currentProductType !== null) && (currentProductType !== undefined)){
+		if((!currentProductType) && (currentProductType !== "")){
+			dankStopBoxProduct.text(currentProductType); 
+		}
       });
     });
 </script>
