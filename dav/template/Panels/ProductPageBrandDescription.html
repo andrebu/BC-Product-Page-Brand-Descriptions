@@ -80,10 +80,12 @@
 /* When AJAX is done, if product type in custom field value #3 is not empty, then replace the word "product" with the product type in CF#3 */
 	  $.when(ajax3()).done(function(a3){
         var dankStopBoxProduct = $('.productTypeSpan');
-        	currentProductType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Value').text().trim().toLowerCase();
-		if((!currentProductType) && (currentProductType !== "")){
-			dankStopBoxProduct.text(currentProductType); 
-		}
+        	currentProductType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
+		if(!currentProductType.trim()){
+			}
+        else { 
+             dankStopBoxProduct.text(currentProductType); 
+        }
       });
     });
 </script>
