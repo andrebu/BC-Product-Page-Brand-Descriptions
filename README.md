@@ -92,7 +92,8 @@ To Do
 4. [Best way to add new css rules with jquery?](http://stackoverflow.com/questions/14136042/best-way-to-add-new-css-rules-with-jquery)  
 5. [CSS3 :nth-child() Selector](http://www.w3schools.com/cssref/sel_nth-child.asp)  
 6. [How do you check for an empty string in JavaScript?](http://stackoverflow.com/questions/154059/how-do-you-check-for-an-empty-string-in-javascript)  
-7. [JQuery not working after AJAX Pagination](http://stackoverflow.com/questions/4831408/jquery-not-working-after-ajax-pagination?rq=1)
+7. [JQuery not working after AJAX Pagination](http://stackoverflow.com/questions/4831408/jquery-not-working-after-ajax-pagination?rq=1)  
+8. [What is the best way to test for an empty string with jquery-out-of-the-box?](http://stackoverflow.com/questions/1812245/what-is-the-best-way-to-test-for-an-empty-string-with-jquery-out-of-the-box)  
 
 
 ================================================================================================
