@@ -7,9 +7,42 @@ BigCommerce Product Page Brand Descriptions that are based on the brand of the p
 
 ## Installation
 
-1. Place %%Panel.ProductPageBrandDescriptions.html%% in Panels/ProductDescription.html, right after "%%GLOBAL_ProductDescriptionOptimizerNoScriptTag%%"
-2. Add all Brand descriptions to the /brand-descriptions/ page.  The format is as follows:
+1. Add **ProductPageBrandDescriptions.html Panel file** to your folder in WebDAV/dav/template/Panels  
+  1. To access your WebDAV panel, BigCommerce gives you instructions in your Admin Panel.  
+  2. Click "Design" in the top right corner of your store admin panel.  
+  3. Then click "WebDAV" in the "Current Theme" section and follow the instructions
+2. Place %%Panel.ProductPageBrandDescriptions%% in Panels/ProductDescription.html, right after "%%GLOBAL_ProductDescriptionOptimizerNoScriptTag%%"
+  + Example
+```HTML
+<div class="Block Moveable Panel ProductDescription" id="ProductDescription">
+    <h3 class="subtitle">%%LNG_ProductDescription%%</h3>
+    <div class="ProductDescriptionContainer prodAccordionContent">
+        %%GLOBAL_ProductDescriptionOptimizerScriptTag%%
+        %%GLOBAL_ProductDesc%%
+        %%GLOBAL_ProductDescriptionOptimizerNoScriptTag%%
 
+        %%Panel.ProductPageBrandDescription%%
+        
+    </div>
+    <!--<hr style="%%GLOBAL_HideSectionSeparator%%" class="ProductSectionSeparator" />-->
+</div>
+
+<div itemscope itemtype="http://schema.org/Product" style="display: none;"> 
+     <span itemprop="name">%%GLOBAL_ProductName%%</span> 
+     <span itemprop="description">%%GLOBAL_ProductDesc%%</span> 
+     <img itemprop="image" src="%%GLOBAL_InitialZoomImage%%"/> 
+
+     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer"> 
+          <span itemprop="price">%%GLOBAL_ProductPrice%%</span> 
+     </div> 
+</div>  
+```
+
+![BigCommerce Product Page Brand Description Installation Example](https://raw.githubusercontent.com/iamandrebulatov/BC-Product-Page-Brand-Descriptions/master/BC%20Product%20Page%20Brand%20Description%20Installation%20-%20Screen%20Shot%202015-02-28%20at%208.22.30%20PM.png "BigCommerce Product Page Brand Description Installation Example")
+
+
+
+3. Add all Brand descriptions to the /brand-descriptions/ page.  The format is as follows:
 ```HTML
 <div id="DankStopTheBest">
     <div align="left">
