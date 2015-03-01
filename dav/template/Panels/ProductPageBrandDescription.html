@@ -20,29 +20,58 @@
 		    margin: 0 auto 20px;\
 		}\
 		 .brand-banner .brand-logo {\
-		    width: 100px;\
-		    height: 100px;\
+		    //width: 19%;\
+		    height: auto;\
 		    overflow: auto;\
 		    margin: 0 auto;\
-		    display: block;\
+		    display: inline-block;\
 		    position: relative;\
+			//float: left;\
+			//line-height: 100%;\
+			//font-size: 150px;\
+			padding: 0 20px;\
+			vertical-align: middle;\
+		}\
+		 .brand-banner .brand-logo a {\
+			display: block;\
+			margin: 0 auto;\
 		}\
 		.brand-banner .brand-image {\
-		    height: 100px;\
+		    //height: 100px;\
 		    margin: 0 auto;\
 		    display: block;\
+		    width: 100px;\
 		}\
 		.brand-banner .brand-info {\
-		    width: 85%;\
-		    margin-left: 10px;\
+		    width: 77%;\
 		    margin: 0 auto;\
 		    position: relative;\
 		    text-align: center;\
+		    display: inline-block;\
+		    vertical-align: middle;\
 		}\
 		.brand-banner .brand-name {\
 		    padding: 5px 0 5px;\
 		    clear: right;\
 		    display: inline-block;\
+		}\
+		.brand-banner .brand-name a {\
+			color: #39b54a;\
+		}\
+		.brand-banner .brand-description {\
+			display: block;\
+			position: relative;\
+			width: 89%;\
+			margin: 0px auto 20px;\
+		}\
+		@media screen and (max-width: 767px) {\
+			.brand-banner .brand-logo {\
+				display: block;\
+				padding: 20px;\
+			}\
+			.brand-banner .brand-info {\
+				display: block;\
+			}\
 		}\
 		.JointSizeHeightContainer .DetailRow:nth-child(3) {\
 			display:none;\
