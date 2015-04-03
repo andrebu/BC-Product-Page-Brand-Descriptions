@@ -1,5 +1,4 @@
 <script type="text/javascript">    
-    $(document).ready(function() {
 /* Add CSS to <head> */
 	$('<style type="text/css"> \
 		/* Brand Logo container */\
@@ -82,6 +81,8 @@
 		}\
 		</style>')
 		.appendTo('head');
+
+    $(document).ready(function() {
 /* Find brand of current product and check the brand page for the matching brand descipriton and add description to the DOM */
 	  function ajax3() {
         return $.ajax({
