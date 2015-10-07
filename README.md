@@ -1,9 +1,8 @@
 BigCommerce-Product-Page-Brand-Descriptions
-===========================================
 
 BigCommerce Product Page Brand Descriptions that are based on the brand of the product and are dynamically pulled from a separate page and added to the product page
 
-================================================================================================
+------------------------------------------------------------------------------------
 
 ## Installation
 
@@ -80,24 +79,54 @@ BigCommerce Product Page Brand Descriptions that are based on the brand of the p
 ```
 
 
-================================================================================================
+------------------------------------------------------------------------------------
 
 ## Using
 
 
     Just install and it'll do the work for you!
 
-================================================================================================
+------------------------------------------------------------------------------------
 
-## Other BigCommerce modules
+## Other BigCommerce modules that I've made
 
+* [BigCommerce Carousel Slider Slide Show Custom](https://github.com/iamandrebulatov/BC-Carousel-Slider-Slide-Show-Custom)
 * [BigCommerce Product Page Demo Videos](https://github.com/iamandrebulatov/BigCommerce-Product-Page-Demo-Videos)
 * [BigCommerce Product Page Brand Descriptions](https://github.com/iamandrebulatov/BigCommerce-Product-Page-Brand-Descriptions)
 * [BigCommerce Product Page Brand Logos](https://github.com/iamandrebulatov/BigCommerce-Product-Page-Brand-Logos)
+* [BigCommerce Product Page Dynamic Product Type Descriptions](https://github.com/iamandrebulatov/BC-Product-Page-Dynamic-Product-Type-Descriptions)
+* [BigCommerce Product Page Image Zoom](https://github.com/iamandrebulatov/BC-Product-Page-Image-Zoom)
 * [BigCommerce Category Page Color Swatch](https://github.com/iamandrebulatov/BigCommerce-Color-Swatch-On-Category)
 * [BigCommerce Category Page 2nd Alternate Thumbnail](https://github.com/iamandrebulatov/BigCommerce-Category-Pages-2nd-Alternate-Thumbnail)
 * [BigCommerce Category Page Videos](https://github.com/iamandrebulatov/BigCommerce-Category-Page-Demo-Videos)
 * [BigCommerce Category Page Out of Stock Ribbons](https://github.com/iamandrebulatov/BigCommerce-Out-of-Stock-Category-Items)
+* [BigCommerce Category Page Staff Picks Selector](https://github.com/iamandrebulatov/BC-Staff-Picks-Selector)
+* [BigCommerce Preview On MouseOver](https://github.com/iamandrebulatov/BC-Preview-On-MouseOver)
+* [BigCommerce Shipping Options Description](https://github.com/iamandrebulatov/BC-Shipping-Options-Descriptions)
+* [BigCommerce Welcoming Age Gate](https://github.com/iamandrebulatov/BC-Welcoming-Age-Gate)
+* [BigCommerce 360 Product View](https://github.com/iamandrebulatov/BC-360-Product-View)
+* [BigCommerce ThumbScroll](https://github.com/iamandrebulatov/BC-ThumbScroll)
+* [BigCommerce Product Accessory Options Choice Upsell](https://github.com/iamandrebulatov/BC-Product-Accessory-Options-Choice-Upsell)
+* [BigCommerce Navigation Dynamic List Item Visual Cues](https://github.com/iamandrebulatov/BC-Nav-Dynamic-List-Item-Visual-Cues)
+* [BigCommerce Contact Form](https://github.com/iamandrebulatov/BC-Contact-Form)
+* [BigCommerce Hot Item Product Counter](https://github.com/iamandrebulatov/BC-Hot-Item-Product-Counter)
+* [BigCommerce Shipping Time Dynamic Feature](https://github.com/iamandrebulatov/BC-Product-Shipping-Time-Dynamic)
+* [BigCommerce Category Page Sold Out Products Reorder](https://github.com/iamandrebulatov/BC-Category-Push-Sold-Out-Products-to-Bottom)
+* [BigCommerce Wholesale Price and Item Hide and Other Features](https://github.com/iamandrebulatov/BC-Wholesale-Price-and-Item-Hide)
+* [BigCommerce Sharing Savings Discount](https://github.com/iamandrebulatov/BC-Sharing-Savings-Discount)
+* [BigCommerce Tooltips](https://github.com/iamandrebulatov/BC-Tooltips)
+* [BigCommerce Order Shipment Tracking APIs ofr USPS, UPS and FedEx](https://github.com/iamandrebulatov/BC-Order-Shipping-Tracking)
+* [BigCommerce Pagination and Infinite Scroll](https://github.com/iamandrebulatov/BC-Category-Pagination)
+* [BigCommerce Misc Projects](https://github.com/iamandrebulatov/BigCommerce-Projects) 
+  * Site Navigation AJAXification
+  * List of SEO enhancements and improvements
+  * Product Images Swipeable
+  * Contact Form Overhaul and AJAXification
+  * Cart Item Removal AJAXification
+
+
+------------------------------------------------------------------------------------
+
 
 ## Support
 
@@ -109,7 +138,7 @@ The absolute best thing to do is to sign up with [ChangeTip](//changetip.com) or
 [![GratiPay donate button](http://andrebulatov.com/wp-content/uploads/gratipay-button.png)](//www.gratipay.com/andrebulatov/ "Donate once-off to this project using GratiPay")
 
 
-================================================================================================
+------------------------------------------------------------------------------------
 
 
 To Do
@@ -117,19 +146,27 @@ To Do
 1. ~~Dynamic Product type inside DankStop description description based on the type of the current product~~  
 2. ~~Improve CSS~~   
 
+
+------------------------------------------------------------------------------------
+
+
 ## Resources
 
-1. [Get selected element's outer HTML](http://stackoverflow.com/questions/2419749/get-selected-elements-outer-html)  
-2. [Change certain paragraph text in jQuery?](http://stackoverflow.com/questions/10256795/change-certain-paragraph-text-in-jquery)  
-3. [jQuery create CSS rule / class @ runtime](http://stackoverflow.com/questions/1212500/jquery-create-css-rule-class-runtime/2076345#2076345)  
-4. [Best way to add new css rules with jquery?](http://stackoverflow.com/questions/14136042/best-way-to-add-new-css-rules-with-jquery)  
-5. [CSS3 :nth-child() Selector](http://www.w3schools.com/cssref/sel_nth-child.asp)  
-6. [How do you check for an empty string in JavaScript?](http://stackoverflow.com/questions/154059/how-do-you-check-for-an-empty-string-in-javascript)  
-7. [JQuery not working after AJAX Pagination](http://stackoverflow.com/questions/4831408/jquery-not-working-after-ajax-pagination?rq=1)  
-8. [What is the best way to test for an empty string with jquery-out-of-the-box?](http://stackoverflow.com/questions/1812245/what-is-the-best-way-to-test-for-an-empty-string-with-jquery-out-of-the-box)  
+- [Get selected element's outer HTML](http://stackoverflow.com/questions/2419749/get-selected-elements-outer-html)  
+- [Change certain paragraph text in jQuery?](http://stackoverflow.com/questions/10256795/change-certain-paragraph-text-in-jquery)  
+- [jQuery create CSS rule / class @ runtime](http://stackoverflow.com/questions/1212500/jquery-create-css-rule-class-runtime/2076345#2076345)  
+- [Best way to add new css rules with jquery?](http://stackoverflow.com/questions/14136042/best-way-to-add-new-css-rules-with-jquery)  
+- [CSS3 :nth-child() Selector](http://www.w3schools.com/cssref/sel_nth-child.asp)  
+- [How do you check for an empty string in JavaScript?](http://stackoverflow.com/questions/154059/how-do-you-check-for-an-empty-string-in-javascript)  
+- [JQuery not working after AJAX Pagination](http://stackoverflow.com/questions/4831408/jquery-not-working-after-ajax-pagination?rq=1)  
+- [What is the best way to test for an empty string with jquery-out-of-the-box?](http://stackoverflow.com/questions/1812245/what-is-the-best-way-to-test-for-an-empty-string-with-jquery-out-of-the-box)  
+- [get one item from an array of name,value JSON](http://stackoverflow.com/questions/7075485/get-one-item-from-an-array-of-name-value-json)
+- [loop through JSON result with jQuery](http://stackoverflow.com/questions/2041497/loop-through-json-result-with-jquery)
+- [jQuery val() indexOf not working](http://stackoverflow.com/questions/7615719/jquery-val-indexof-not-working)
+- [Will content loaded by AJAX affect SEO/Search Engines?](http://stackoverflow.com/questions/3084003/will-content-loaded-by-ajax-affect-seo-search-engines)
+- []()
 
-
-================================================================================================
+------------------------------------------------------------------------------------
 
 
 ## License
