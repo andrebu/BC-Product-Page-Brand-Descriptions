@@ -1,3 +1,21 @@
+<style>
+.this-prod-features h2 {
+	float: none;
+}
+.this-prod-features dt, 
+.this-prod-features dd {
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;
+}
+.this-prod-features dt {
+	text-transform: capitalize;
+	width: 25%;
+}
+.this-prod-features dd {
+	width: 75%;
+}	
+</style>
 <script type="text/javascript">    
 /* Add CSS to <head> */
     $('<style type="text/css"> \
@@ -109,23 +127,36 @@
         });
       }
 	  /* When AJAX is done, if product type in custom field value #3 is not empty, replace the word "product" with value of CF#3 */
-      $.when(ajax3()).done(function(a3){
-        var dankStopBoxProduct = $('.productTypeSpan');
-            thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
-        if(thisProdType.trim()){
-			dankStopBoxProduct.text(thisProdType); 
-			$(DankStopGlossary.type).each(function (i, value) {
-				if ((this.name == thisProdType) || (this.aka == thisProdType)) {
-					var placingSelector = $('.top-sep:first');
-					var topSep = '<hr class="top-sep">';
-					var aboutTitle = '<h2>About '+this.name+'s</h2>';
-					var aboutText = '<p>'+this.description+'</p>';
-					var aboutCont = ''+topSep+'<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
-					$(placingSelector).before(aboutCont);
-				}
-			});
-        }
-      });
+		$.when(ajax3()).done(function(a3){
+			var dankStopBoxProduct = $('.productTypeSpan');
+			var topSep = '<hr class="top-sep">';
+			var placingSelector = $('.top-sep:first');
+			var thisDescText = $('.ProductDescriptionContainer > p').text();
+			thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
+			if(thisProdType.trim()){
+				dankStopBoxProduct.text(thisProdType); 
+				$(DankStopGlossary.type).each(function (i, value) {
+					if ((this.name == thisProdType) || (this.aka == thisProdType)) {
+						var aboutTitle = '<h2>About '+this.name+'s</h2>';
+						var aboutText = '<p>'+this.description+'</p>';
+						var aboutCont = ''+topSep+'<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
+						$(placingSelector).before(aboutCont);
+					}
+				});
+				var prodFeaturesTitle = '<h2>Features Of This '+thisProdType+'</h2>';
+				var prodFeaturesCont = ''+topSep+'<div class="this-prod-features" style="display:none;">'+prodFeaturesTitle+'<dl></dl></div>';
+				$(placingSelector).before(prodFeaturesCont);
+				$(DankStopGlossary.feature).each(function (i, value) {
+					if (thisDescText.indexOf(this.name) != -1) {
+						console.log(this);
+						var prodFeatureName = '<dt>'+this.name+'s</dt>';
+						var prodFeatureText = '<dd>'+this.def+'</dd>';
+						var prodFeature = ''+prodFeatureName+prodFeatureText+'';
+						$('.this-prod-features dl').append(prodFeature);
+					}
+				});
+			}
+		});
     });
     
 var DankStopGlossary = {
