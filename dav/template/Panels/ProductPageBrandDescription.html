@@ -19,11 +19,30 @@
 }
 #ProductDescription .prod-features dt:last-of-type, 
 #ProductDescription .prod-features dd:last-child {
-	margin: 0;
+	margin-bottom: 0;
 }
 #ProductDescription .prod-features dt {
 	text-transform: capitalize;
-	width: 30%;
+	width: 27%;
+	margin-right: 3%;
+	position: relative;
+	z-index: 1;
+}
+#ProductDescription .prod-features dt span {
+	z-index: 1;
+	background-color: #fff;
+	padding-right: 9%;
+}
+#ProductDescription .prod-features dt:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	height: 0.5em;
+	border-top: 1px solid #ededed;
+	z-index: -1;
 }
 #ProductDescription .prod-features dd {
 	width: 70%;
@@ -168,7 +187,7 @@
 			console.log(thisBulletsText);
 			$(DankStopGlossary.feature).each(function (i, value) {
 				if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
-					var prodFeatureName = '<dt>'+this.name+'</dt>';
+					var prodFeatureName = '<dt><span>'+this.name+'</span></dt>';
 					var prodFeatureText = '<dd>'+this.def+'</dd>';
 					var prodFeature = ''+prodFeatureName+prodFeatureText+'';
 					$('.prod-features').show();
