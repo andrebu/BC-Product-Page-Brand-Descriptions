@@ -164,6 +164,9 @@ To Do
 - [loop through JSON result with jQuery](http://stackoverflow.com/questions/2041497/loop-through-json-result-with-jquery)
 - [jQuery val() indexOf not working](http://stackoverflow.com/questions/7615719/jquery-val-indexof-not-working)
 - [Will content loaded by AJAX affect SEO/Search Engines?](http://stackoverflow.com/questions/3084003/will-content-loaded-by-ajax-affect-seo-search-engines)
+- [MDN: <dl>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
+- []()
+- []()
 - []()
 
 ------------------------------------------------------------------------------------
