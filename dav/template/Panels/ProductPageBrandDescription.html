@@ -46,7 +46,11 @@
 }
 #ProductDescription .prod-features dd {
 	width: 70%;
-}	
+}
+#ProductDescription .prod-features dd span {
+	display: block;
+	padding-top: 3px;
+}
 </style>
 <script type="text/javascript">    
 /* Add CSS to <head> */
@@ -188,7 +192,7 @@
 			$(DankStopGlossary.feature).each(function (i, value) {
 				if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
 					var prodFeatureName = '<dt><span>'+this.name+'</span></dt>';
-					var prodFeatureText = '<dd>'+this.def+'</dd>';
+					var prodFeatureText = '<dd><span>'+this.def+'</span></dd>';
 					var prodFeature = ''+prodFeatureName+prodFeatureText+'';
 					$('.prod-features').show();
 					$('.prod-features dl').show().append(prodFeature);
