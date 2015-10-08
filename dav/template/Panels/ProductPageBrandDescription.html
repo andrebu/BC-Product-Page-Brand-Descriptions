@@ -1,18 +1,26 @@
 <style>
-#ProductDescription .this-prod-features h2 {
+#ProductDescription .prod-features {
+	display: none;
+}
+#ProductDescription .prod-features h2 {
 	float: none;
 }
-#ProductDescription .this-prod-features dt, 
-#ProductDescription .this-prod-features dd {
+#ProductDescription .prod-features dt, 
+#ProductDescription .prod-features dd {
 	display: inline-block;
 	margin: 0;
 	vertical-align: top;
+	margin-bottom: 15px;
 }
-#ProductDescription .this-prod-features dt {
+#ProductDescription .prod-features dt:last-of-type, 
+#ProductDescription .prod-features dd:last-child {
+	margin: 0;
+}
+#ProductDescription .prod-features dt {
 	text-transform: capitalize;
 	width: 25%;
 }
-#ProductDescription .this-prod-features dd {
+#ProductDescription .prod-features dd {
 	width: 75%;
 }	
 </style>
@@ -144,15 +152,15 @@
 					}
 				});
 				var prodFeaturesTitle = '<h2>Features Of This '+thisProdType+'</h2>';
-				var prodFeaturesCont = ''+topSep+'<div class="this-prod-features" style="display:none;">'+prodFeaturesTitle+'<dl></dl></div>';
+				var prodFeaturesCont = '<hr class="top-sep prod-features"><div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
 				$(placingSelector).before(prodFeaturesCont);
 				$(DankStopGlossary.feature).each(function (i, value) {
 					if (thisDescText.indexOf(this.name) != -1) {
-						console.log(this);
 						var prodFeatureName = '<dt>'+this.name+'s</dt>';
 						var prodFeatureText = '<dd>'+this.def+'</dd>';
 						var prodFeature = ''+prodFeatureName+prodFeatureText+'';
-						$('.this-prod-features dl').append(prodFeature);
+						$('.prod-features').show();
+						$('.prod-features dl').show().append(prodFeature);
 					}
 				});
 			}
@@ -687,8 +695,8 @@ var DankStopGlossary = {
       "description": "Dab Rigs (also known as vapor rigs, concentrate rigs, concentrate pipes, or oil rigs) are a specific type of water pipe used for the consumption of essential oils, legal concentrates, and legal waxes. Vapor Rigs feature a joint (10mm, 14mm, or 18mm) and have a different process depending on the type of nail used. With a standard dome and nail, simply remove the dome and heat the nail with a butane torch. Place the dome back over the nail and use a dabber or dab tool to put the desired amount of concentrates on to the nail and inhale. A domeless nail requires the same process except with more convenience as there is no need to remove and replace the dome. The essential oils will vaporize due to the high temperature of the nail, and vapor will travel through the concentrate rig ready for smooth inhalation."
     },
     {
-      "name": "water pipes",
-      "aka": "tobacco bongs",
+      "name": "water pipe",
+      "aka": "tobacco bong",
       "description": "Water pipes are usually larger pipes that contain water that bubbles as you pull from them. The water, combined with the many different structured percolators, filters and diffuses your smoke for smooth hits. Glass water pipes can contain features such as bent necks, ice catchers, and flared mouthpieces that make your smoking experience even more enjoyable."
     },
     {
