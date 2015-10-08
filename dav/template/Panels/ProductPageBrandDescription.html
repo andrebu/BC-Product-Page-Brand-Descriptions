@@ -150,7 +150,7 @@
 				thisBulletsText += ' ' + $(this).text().toLowerCase() + '';
 			});
 			var thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
-			if(thisProdType.trim()){
+			if(thisProdType){
 				dankStopBoxProduct.text(thisProdType); 
 				$(DankStopGlossary.type).each(function (i, value) {
 					if ((this.name == thisProdType) || (this.aka == thisProdType)) {
@@ -160,20 +160,21 @@
 						$(placingSelector).before(aboutCont);
 					}
 				});
-				var prodFeaturesTitle = '<h2>Features Of This '+thisProdType+'</h2>';
-				var prodFeaturesCont = '<hr class="top-sep prod-features"><div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
-				$(placingSelector).before(prodFeaturesCont);
-				console.log(thisBulletsText);
-				$(DankStopGlossary.feature).each(function (i, value) {
-					if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
-						var prodFeatureName = '<dt>'+this.name+'</dt>';
-						var prodFeatureText = '<dd>'+this.def+'</dd>';
-						var prodFeature = ''+prodFeatureName+prodFeatureText+'';
-						$('.prod-features').show();
-						$('.prod-features dl').show().append(prodFeature);
-					}
-				});
 			}
+			var typeFeatTitle = thisProdType ? thisProdType : 'Piece';
+			var prodFeaturesTitle = '<h2>Features Of This '+typeFeatTitle+'</h2>';
+			var prodFeaturesCont = '<hr class="top-sep prod-features"><div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
+			$(placingSelector).before(prodFeaturesCont);
+			console.log(thisBulletsText);
+			$(DankStopGlossary.feature).each(function (i, value) {
+				if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
+					var prodFeatureName = '<dt>'+this.name+'</dt>';
+					var prodFeatureText = '<dd>'+this.def+'</dd>';
+					var prodFeature = ''+prodFeatureName+prodFeatureText+'';
+					$('.prod-features').show();
+					$('.prod-features dl').show().append(prodFeature);
+				}
+			});
 		});
     });
     
