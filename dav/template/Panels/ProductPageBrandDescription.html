@@ -156,7 +156,7 @@
 				$(placingSelector).before(prodFeaturesCont);
 				$(DankStopGlossary.feature).each(function (i, value) {
 					if (thisDescText.indexOf(this.name) != -1) {
-						var prodFeatureName = '<dt>'+this.name+'s</dt>';
+						var prodFeatureName = '<dt>'+this.name+'</dt>';
 						var prodFeatureText = '<dd>'+this.def+'</dd>';
 						var prodFeature = ''+prodFeatureName+prodFeatureText+'';
 						$('.prod-features').show();
