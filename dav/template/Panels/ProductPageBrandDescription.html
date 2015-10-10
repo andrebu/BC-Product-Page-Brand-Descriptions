@@ -8,7 +8,7 @@
 	margin: 0;
 }
 #ProductDescription .prod-features h2 {
-	margin: 0 0 13px 30%;
+	margin: 0 0 13px 0;
 }
 #ProductDescription .prod-features dt, 
 #ProductDescription .prod-features dd {
@@ -189,7 +189,6 @@
 			var prodFeaturesTitle = '<h2>Features Of This '+typeFeatTitle+'</h2>';
 			var prodFeaturesCont = '<hr class="top-sep prod-features"><div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
 			$(placingSelector).before(prodFeaturesCont);
-			console.log(thisBulletsText);
 			$(DankStopGlossary.feature).each(function (i, value) {
 				if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
 					var prodFeatureName = '<dt><span>'+this.name+'</span></dt>';
