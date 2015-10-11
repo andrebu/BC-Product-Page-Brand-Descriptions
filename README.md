@@ -152,6 +152,7 @@ To Do
 
 ## Resources
 
+- [JSON Online Editor: DS Data DB](http://www.jsoneditoronline.org/?id=c508267bbd98a3545cd1c7f8c4a83b36)
 - [Get selected element's outer HTML](http://stackoverflow.com/questions/2419749/get-selected-elements-outer-html)  
 - [Change certain paragraph text in jQuery?](http://stackoverflow.com/questions/10256795/change-certain-paragraph-text-in-jquery)  
 - [jQuery create CSS rule / class @ runtime](http://stackoverflow.com/questions/1212500/jquery-create-css-rule-class-runtime/2076345#2076345)  
