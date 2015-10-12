@@ -5,12 +5,12 @@
 #ProductDescription .prod-features {
 	display: none;
 }
-#ProductDescription .about-this-prod h2,
-#ProductDescription .prod-features h2 {
+#ProductDescription .about-this-prod h3,
+#ProductDescription .prod-features h3 {
 	float: none;
 	margin: 0;
 }
-#ProductDescription .prod-features h2 {
+#ProductDescription .prod-features h3 {
 	margin: 0 0 13px 0;
 }
 #ProductDescription .prod-features dt, 
@@ -55,6 +55,55 @@
 	display: block;
 	padding-top: 3px;
 }
+/* Product page DankStop byline description */
+#Dank-Stop-Best {
+}
+#Dank-Stop-Best h3 {
+	color: #333;
+	font-size: 23px;
+	line-height: 27px;
+	font-family: futura;
+	font-weight: 900;
+	font-style: italic;
+	width: 65%;
+	margin-bottom: 10px;
+}
+#Dank-Stop-Best div div {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+#Dank-Stop-Best div div:first-of-type {
+	width: 75%
+}
+#Dank-Stop-Best div div:first-of-type p {
+	margin-bottom: 10px;
+}
+#Dank-Stop-Best div div:nth-of-type(2) {
+	width: 25%
+}
+#Dank-Stop-Best img {
+}
+/*
+div#DankStopTheBest {
+  display: table;
+  text-align: center;
+}
+i.fa.fa-trophy {
+  display: inline-block;
+  font-size: 120px;
+  vertical-align: middle;
+  color: #6ADA78;
+  margin-right: 10px;
+  display: table-cell;
+}
+div#DStext {
+  display: inline-block;
+  width: 80%;
+  vertical-align: middle;
+  display: table-cell;
+}
+*/
 </style>
 <script type="text/javascript">    
 /* Add CSS to <head> */
@@ -147,10 +196,9 @@
           url: "/brand-descriptions/" 
             }).done(function ( data ) {
               var html = $(data);
-                  items = $('.BlockContent .brand-banner', html);
-                  DankStopTheBest = html.find('#DankStopTheBest')[0].outerHTML;
-              $('.ProductDescriptionContainer').append("<hr class='top-sep'>");
-              $('.ProductDescriptionContainer').append(DankStopTheBest);                            
+              var items = $('.BlockContent .brand-banner', html);
+              //console.log('items', items);
+                  //DankStopTheBest = html.find('#DankStopTheBest')[0].outerHTML;
               items.each(function() {
                 var brand = this.id;
                 if(brand){
@@ -168,6 +216,21 @@
       }
 	  /* When AJAX is done, if product type in custom field value #3 is not empty, replace the word "product" with value of CF#3 */
 		$.when(ajax3()).done(function(a3){
+			//DankStop's The Best
+			var dsObj = DankStopGlossary.DankStop;
+			var dsTitle = dsObj.title;
+			var dsTitleText = $("<div/>").html($(dsObj.title).html()).text();
+			var dsText = dsObj.text;
+			var dsImg = '<div><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
+			console.log(dsTitle);
+			console.log(dsTitleText);
+			console.log(dsImg);
+			var dsBox = $('<div id="Dank-Stop-Best">').html('<div><div>'+$("<div/>").html(dsTitle+dsText).text()+'</div>'+dsImg+'</div>');
+			console.log(dsBox);
+			$('.ProductDescriptionContainer').append("<hr class='top-sep'>");
+			$('.ProductDescriptionContainer').append(dsBox);                            
+			
+			//Product Type
 			var dankStopBoxProduct = $('.productTypeSpan');
 			var topSep = '<hr class="top-sep">';
 			var placingSelector = $('.top-sep:first');
@@ -181,7 +244,7 @@
 				dankStopBoxProduct.text(thisProdType); 
 				$(DankStopGlossary.type).each(function (i, value) {
 					if ((this.name == thisProdType) || (this.aka == thisProdType)) {
-						var aboutTitle = '<h2>About '+this.name+'s</h2>';
+						var aboutTitle = '<h3>About '+this.name+'s</h3>';
 						var aboutLink = ' <a href="'+this.url+'" class="about-link">Shop More '+this.name+'s...</a>';
 						var aboutText = '<p>'+this.description+aboutLink+'</p>';
 						var aboutCont = ''+topSep+'<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
@@ -189,8 +252,10 @@
 					}
 				});
 			}
+			
+			//Product Features
 			var typeFeatTitle = thisProdType ? thisProdType : 'Piece';
-			var prodFeaturesTitle = '<h2>Features Of This '+typeFeatTitle+'</h2>';
+			var prodFeaturesTitle = '<h3>Features Of This '+typeFeatTitle+'</h3>';
 			var prodFeaturesCont = '<hr class="top-sep prod-features"><div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
 			$(placingSelector).before(prodFeaturesCont);
 			$(DankStopGlossary.feature).each(function (i, value) {
@@ -207,7 +272,9 @@
     
 var DankStopGlossary = {
   "DankStop": {
-    "Best": "&#x3C;div id=&#x22;DankStopTheBest&#x22;&#x3E;&#x3C;div align=&#x22;left&#x22;&#x3E;&#x3C;strong&#x3E;DankStop aims to be the worlds best online headshop.&#xA0;&#x3C;/strong&#x3E;&#x3C;/div&#x3E;&#x3C;div align=&#x22;left&#x22;&#x3E;If you have any questions or concerns about this &#x3C;span class=&#x22;productTypeSpan&#x22;&#x3E;product&#x3C;/span&#x3E;, feel free to contact us via our &#x3C;a class=&#x22;green&#x22; href=&#x22;http://dankstop.com/contact-us/&#x22;&#x3E;contact form&#x3C;/a&#x3E;, call us at &#x3C;a class=&#x22;green&#x22; href=&#x22;tel:18443265786&#x22;&#x3E;1-844-326-5786&#x3C;/a&#x3E;, or email us at &#x3C;a class=&#x22;green&#x22; href=&#x22;mailto:info@dankstop.com&#x22; target=&#x22;_blank&#x22;&#x3E;info@dankstop.com&#x3C;/a&#x3E;. Our staff is highly knowledgeable about our products and always happy to help you make a decision.&#xA0;&#x3C;/div&#x3E;&#x3C;div align=&#x22;left&#x22;&#x3E;&#xA0;&#x3C;/div&#x3E;&#x3C;div align=&#x22;left&#x22;&#x3E;We take pride in honoring a 100% customer satisfaction guarantee on all of our glass pipes and accessories. If for any reason you are unsatisfied with your purchase, send it back!&#xA0;&#x3C;/div&#x3E;&#x3C;div align=&#x22;left&#x22;&#x3E;&#xA0;&#x3C;/div&#x3E;&#x3C;/div&#x3E;"
+    "title": "&lt;h3&gt;DankStop aims to be the world's best online headshop&lt;/h3&gt;",
+    "text": "&lt;p&gt;If you have any questions or concerns about this &lt;span class=&quot;productTypeSpan&quot;&gt;vapor rig&lt;/span&gt;, feel free to contact us via our &lt;a class=&quot;green&quot; href=&quot;http://dankstop.com/contact-us/&quot;&gt;contact form&lt;/a&gt;, call us at &lt;a class=&quot;green&quot; href=&quot;tel:18443265786&quot;&gt;1-844-326-5786&lt;/a&gt;, or email us at &lt;a class=&quot;green&quot; href=&quot;mailto:support@dankstop.com&quot; target=&quot;_blank&quot;&gt;support@dankstop.com&lt;/a&gt;. Our staff is highly knowledgeable about our products and always happy to help you make a decision.&lt;/p&gt;&lt;p&gt;We take pride in honoring a 100% customer satisfaction guarantee on all of our glass pipes and accessories. If for any reason you are unsatisfied with your purchase, send it back!&lt;/p&gt;",
+    "img": "/content/images/why-shop-at-an-online-smoke-shop/bong1.png"
   },
   "brand": [
     {
