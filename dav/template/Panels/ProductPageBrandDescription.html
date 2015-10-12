@@ -5,6 +5,9 @@
 #ProductDescription .prod-features {
 	display: none;
 }
+#ProductDescription .about-this-prod {
+	font-family: futura;
+}
 #ProductDescription .about-this-prod h3,
 #ProductDescription .prod-features h3 {
 	float: none;
@@ -36,6 +39,7 @@
 	background-color: #fff;
 	padding-right: 9%;
 	display: inline-block;
+	font-family: futura;
 }
 #ProductDescription .prod-features dt:after {
 	content: ' ';
@@ -54,19 +58,13 @@
 #ProductDescription .prod-features dd span {
 	display: block;
 	padding-top: 3px;
+	font-family: futura;
 }
 /* Product page DankStop byline description */
 #Dank-Stop-Best {
 }
-#Dank-Stop-Best h3 {
-	color: #333;
-	font-size: 23px;
-	line-height: 27px;
-	font-family: futura;
-	font-weight: 900;
-	font-style: italic;
-	width: 65%;
-	margin-bottom: 10px;
+#Dank-Stop-Best div {
+	position: relative;	
 }
 #Dank-Stop-Best div div {
 	display: inline-block;
@@ -76,8 +74,19 @@
 #Dank-Stop-Best div div:first-of-type {
 	width: 75%
 }
+#Dank-Stop-Best div div:first-of-type h3 {
+	color: #333;
+	font-size: 23px;
+	line-height: 27px;
+	font-family: futura;
+	font-weight: 900;
+	font-style: italic;
+	width: 65%;
+	margin-bottom: 10px;
+}
 #Dank-Stop-Best div div:first-of-type p {
 	margin-bottom: 10px;
+	font-family: futura;
 }
 #Dank-Stop-Best div div:nth-of-type(2) {
 	width: 25%
@@ -108,26 +117,28 @@
 #Dank-Stop-Best img {
 	display: none;
 }
-/*
-div#DankStopTheBest {
-  display: table;
-  text-align: center;
+@media screen and (max-width: 768px) {
+	#Dank-Stop-Best div div:first-of-type {
+		width: 100%;
+	}
+	#Dank-Stop-Best div div:first-of-type h3 {
+		width: 60%;
+	}
+	#Dank-Stop-Best div div:nth-of-type(2) {
+		position: absolute;
+		top: -7px;
+		right: 0;
+		width: auto;
+	}
+	#Dank-Stop-Best div div:nth-of-type(2) i {
+		font-size: 10em;
+	}
+	#Dank-Stop-Best div div:nth-of-type(2) i:after {
+		font-size: 0.25em;
+		top: 0.8em;
+		left: 1.4em;
+	}
 }
-i.fa.fa-trophy {
-  display: inline-block;
-  font-size: 120px;
-  vertical-align: middle;
-  color: #6ADA78;
-  margin-right: 10px;
-  display: table-cell;
-}
-div#DStext {
-  display: inline-block;
-  width: 80%;
-  vertical-align: middle;
-  display: table-cell;
-}
-*/
 </style>
 <script type="text/javascript">    
 /* Add CSS to <head> */
@@ -179,6 +190,7 @@ div#DStext {
             text-align: center;\
             display: inline-block;\
             vertical-align: middle;\
+			font-family: futura;\
         }\
         .brand-banner .brand-info .brand-name {\
             padding: 5px 0 5px;\
