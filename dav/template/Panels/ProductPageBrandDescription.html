@@ -82,6 +82,23 @@
 #Dank-Stop-Best div div:nth-of-type(2) {
 	width: 25%
 }
+#Dank-Stop-Best div div:nth-of-type(2) i {
+	font-size: 30px;
+	color: #39b54a;
+	position: absolute;
+	left: 90px;
+	top: 250px;
+}
+#Dank-Stop-Best div div:nth-of-type(2) i:after {
+	display: block;
+	content: "#1";
+	color: #fff;
+	font-size: 8px;
+	font-weight: 900;
+	position: absolute;
+	top: 5px;
+	left: 8px;
+}
 #Dank-Stop-Best img {
 }
 /*
@@ -221,7 +238,7 @@ div#DStext {
 			var dsTitle = dsObj.title;
 			var dsTitleText = $("<div/>").html($(dsObj.title).html()).text();
 			var dsText = dsObj.text;
-			var dsImg = '<div><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
+			var dsImg = '<div><i class="fa fa-trophy"></i><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
 			console.log(dsTitle);
 			console.log(dsTitleText);
 			console.log(dsImg);
