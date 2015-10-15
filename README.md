@@ -117,6 +117,7 @@ BigCommerce Product Page Brand Descriptions that are based on the brand of the p
 * [BigCommerce Tooltips](https://github.com/iamandrebulatov/BC-Tooltips)
 * [BigCommerce Order Shipment Tracking APIs ofr USPS, UPS and FedEx](https://github.com/iamandrebulatov/BC-Order-Shipping-Tracking)
 * [BigCommerce Pagination and Infinite Scroll](https://github.com/iamandrebulatov/BC-Category-Pagination)
+* [BigCommerce Brand Page Product Type Sections](https://github.com/iamandrebulatov/BC-Brand-Product-Type-Sections)
 * [BigCommerce Misc Projects](https://github.com/iamandrebulatov/BigCommerce-Projects) 
   * Site Navigation AJAXification
   * List of SEO enhancements and improvements
