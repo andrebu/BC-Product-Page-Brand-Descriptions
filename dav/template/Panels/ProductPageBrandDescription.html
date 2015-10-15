@@ -258,11 +258,7 @@
 			var dsTitleText = $("<div/>").html($(dsObj.title).html()).text();
 			var dsText = dsObj.text;
 			var dsImg = '<div><i class="fa fa-trophy"></i><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
-			console.log(dsTitle);
-			console.log(dsTitleText);
-			console.log(dsImg);
 			var dsBox = $('<div id="Dank-Stop-Best">').html('<div><div>'+$("<div/>").html(dsTitle+dsText).text()+'</div>'+dsImg+'</div>');
-			console.log(dsBox);
 			$('.ProductDescriptionContainer').append("<hr class='top-sep'>");
 			$('.ProductDescriptionContainer').append(dsBox);                            
 			
