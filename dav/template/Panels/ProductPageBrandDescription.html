@@ -226,42 +226,13 @@
         .appendTo('head');
     
     $(document).ready(function() {
-	/* Find brand of current product and check the brand page for the matching brand descipriton and add description to the DOM */
-      function ajax3() {
-        return $.ajax({
-          url: "/brand-descriptions/" 
-            }).done(function ( data ) {
-              var html = $(data);
-              var items = $('.BlockContent .brand-banner', html);
-              //console.log('items', items);
-                  //DankStopTheBest = html.find('#DankStopTheBest')[0].outerHTML;
-              items.each(function() {
-                var brand = this.id;
-                if(brand){
-                var brname = '%%GLOBAL_BrandName%%'
-                    replaced1 = String(brand.replace(/ /g, '')).toUpperCase(); 
-                    replaced2 = String(brname.replace(/ /g, '')).toUpperCase();   
-                      if( replaced1 === replaced2 ){
-                          brandContent = this;
-                          $('.ProductDescriptionContainer').append("<hr class='top-sep'>");
-                          $('.ProductDescriptionContainer').append(brandContent);
-                    }        
-                }                                
-            });                             
-        });
-      }
-	  /* When AJAX is done, if product type in custom field value #3 is not empty, replace the word "product" with value of CF#3 */
-		$.when(ajax3()).done(function(a3){
-			//Product Type
+		var topSep = '<hr class="top-sep">';
+		var placingSelector = $('.ProductDescriptionContainer');
+		var thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
+
+		//Product Type
+		function prodType() {
 			var dankStopBoxProduct = $('.productTypeSpan');
-			var topSep = '<hr class="top-sep">';
-			var placingSelector = $('.top-sep:first');
-			var thisDescText = $('.ProductDescriptionContainer > p').text().toLowerCase();
-			var thisBulletsText = '';
-			$('.ProductWarrantyContainer ul li').each( function() {
-				thisBulletsText += ' ' + $(this).text().toLowerCase() + '';
-			});
-			var thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
 			if(thisProdType){
 				dankStopBoxProduct.text(thisProdType); 
 				$(DankStopGlossary.type).each(function (i, value) {
@@ -269,17 +240,24 @@
 						var aboutTitle = '<h3>About '+this.name+'s</h3>';
 						var aboutLink = ' <a href="'+this.url+'" class="about-link">Shop More '+this.name+'s...</a>';
 						var aboutText = '<p>'+this.description+aboutLink+'</p>';
-						var aboutCont = ''+topSep+'<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
-						$(placingSelector).before(aboutCont);
+						var aboutCont = '<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
+						placingSelector.append(topSep, aboutCont);
 					}
 				});
 			}
-			
-			//Product Features
+		}
+		
+		//Product Features
+		function prodFeatures() {
 			var typeFeatTitle = thisProdType ? thisProdType : 'Piece';
 			var prodFeaturesTitle = '<h3>Features Of This '+typeFeatTitle+'</h3>';
-			var prodFeaturesCont = '<hr class="top-sep prod-features"><div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
-			$(placingSelector).before(prodFeaturesCont);
+			var prodFeaturesCont = '<div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
+			placingSelector.append(topSep, prodFeaturesCont);
+			var thisDescText = $('.ProductDescriptionContainer > p').text().toLowerCase();
+			var thisBulletsText = '';
+			$('.ProductWarrantyContainer ul li').each( function() {
+				thisBulletsText += ' ' + $(this).text().toLowerCase() + '';
+			});
 			$(DankStopGlossary.feature).each(function (i, value) {
 				if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
 					var prodFeatureName = '<dt><span>'+this.name+'</span></dt>';
@@ -289,8 +267,10 @@
 					$('.prod-features dl').show().append(prodFeature);
 				}
 			});
-			
-			// Product Brand
+		}
+		
+		// Product Brand
+		function prodBrand() {
 			var bN = '%%GLOBAL_BrandName%%';
 			var bO = DankStopGlossary.brand['%%GLOBAL_BrandName%%'];
 			var bU = bO.url;
@@ -302,19 +282,31 @@
 			var brandName = '<div class="brand-info"><h3 class="brand-name"><a href="'+bU;
 				brandName += '">'+bN+'</a></h3>';
 			var brandDesc = '<p>'+bD+'</p></div></div>';
-			var brandInfo = $('<div />').hide().html(brandLogo + brandName + brandDesc);
-			$('.ProductDescriptionContainer').append(brandInfo);
+			var brandInfo = $('<div />').html(brandLogo + brandName + brandDesc);
+			placingSelector.append(topSep, brandInfo);
+		}
 
-			//DankStop's The Best
+		//DankStop's The Best
+		function dSB() {
 			var dsObj = DankStopGlossary.DankStop;
 			var dsTitle = dsObj.title;
 			var dsTitleText = $("<div/>").html($(dsObj.title).html()).text();
 			var dsText = dsObj.text;
 			var dsImg = '<div><i class="fa fa-trophy"></i><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
 			var dsBox = $('<div id="Dank-Stop-Best">').html('<div><div>'+$("<div/>").html(dsTitle+dsText).text()+'</div>'+dsImg+'</div>');
-			$('.ProductDescriptionContainer').append("<hr class='top-sep'>");
-			$('.ProductDescriptionContainer').append(dsBox);                            
-		});
+			placingSelector.append("<hr class='top-sep'>");
+			placingSelector.append(dsBox);                            
+		}
+	    
+	    function prodInfo() {
+			prodType();
+			prodFeatures();
+			prodBrand();
+			dSB();
+	    }	    
+	    
+	    prodInfo();
+
     });
     
 var DankStopGlossary = {
