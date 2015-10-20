@@ -1407,11 +1407,11 @@
 		function prodType() {
 			var dankStopBoxProduct = $('.productTypeSpan');
 			if(thisProdType){
-				var glossEntry = DankStopGlossary.type[thisProdType];
-				if (glossEntry) {
-					var aboutTitle = '<h3>About '+glossEntry+'s</h3>';
-					var aboutLink = ' <a href="'+glossEntry.url+'" class="about-link">Shop More '+glossEntry+'s...</a>';
-					var aboutText = '<p>'+this.description+aboutLink+'</p>';
+				var entry = DankStopGlossary.type[thisProdType];
+				if (entry) {
+					var aboutTitle = '<h3>About '+thisProdType+'s</h3>';
+					var aboutLink = ' <a href="'+entry.url+'" class="about-link">Shop More '+thisProdType+'s...</a>';
+					var aboutText = '<p>'+entry.description+aboutLink+'</p>';
 					var aboutCont = '<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
 					placingSelector.append(topSep, aboutCont);
 				}
@@ -1572,7 +1572,7 @@
 	}
 	    
     function prodInfo() {
-		//prodType();
+		prodType();
 		prodFeatures();
 		prodBrand();
 		dSB();
