@@ -1381,79 +1381,85 @@
   "misc": "misc"
 };
     
-		var topSep = '<hr class="top-sep">';
-		var placingSelector = $('.ProductDescriptionContainer');
-		var thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
+	var topSep = '<hr class="top-sep">';
+	var placingSelector = $('.ProductDescriptionContainer');
+	var thisProdType = $('.JointSizeHeightContainer .DetailRow:eq(2)').find('.Label').text().trim().toLowerCase();
 
-		//Product Type
-		function prodType() {
-			var dankStopBoxProduct = $('.productTypeSpan');
-			if(thisProdType){
-				var entry = DankStopGlossary.type[thisProdType];
-				if (entry) {
-					var aboutTitle = '<h3>About '+thisProdType+'s</h3>';
-					var aboutLink = ' <a href="'+entry.url+'" class="about-link">Shop More '+thisProdType+'s...</a>';
-					var aboutText = '<p>'+entry.description+aboutLink+'</p>';
-					var aboutCont = '<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
-					placingSelector.append(topSep, aboutCont);
-				}
+	//Product Type
+	function prodType() {
+		var dankStopBoxProduct = $('.productTypeSpan');
+		if(thisProdType){
+			var entry = DankStopGlossary.type[thisProdType];
+			if (entry) {
+				var aboutTitle = '<h3>About '+thisProdType+'s</h3>';
+				var aboutLink = ' <a href="'+entry.url+'" class="about-link">Shop More '+thisProdType+'s...</a>';
+				var aboutText = '<p>'+entry.description+aboutLink+'</p>';
+				var aboutCont = '<div class="about-this-prod">'+aboutTitle+aboutText+'</div>';
+				placingSelector.append(topSep, aboutCont);
 			}
 		}
-		
-		//Product Features
-		function prodFeatures() {
-			var typeFeatTitle = thisProdType ? thisProdType : 'Piece';
-			var prodFeaturesTitle = '<h3>Features Of This '+typeFeatTitle+'</h3>';
-			var prodFeaturesCont = '<div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
-			placingSelector.append(topSep, prodFeaturesCont);
-			var thisDescText = $('.ProductDescriptionContainer > p').text().toLowerCase();
-			var thisBulletsText = '';
-			$('.ProductWarrantyContainer ul li').each( function() {
-				thisBulletsText += ' ' + $(this).text().toLowerCase() + '';
-			});
-			$(DankStopGlossary.feature).each(function (i, value) {
-				if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
-					var prodFeatureName = '<dt><span>'+this.name+'</span></dt>';
-					var prodFeatureText = '<dd><span>'+this.def+'</span></dd>';
-					var prodFeature = ''+prodFeatureName+prodFeatureText+'';
-					$('.prod-features').show();
-					$('.prod-features dl').show().append(prodFeature);
+	}
+	
+	//Product Features
+	function prodFeatures() {
+		var typeFeatTitle = thisProdType ? thisProdType : 'Piece';
+		var prodFeaturesTitle = '<h3>Features Of This '+typeFeatTitle+'</h3>';
+		var prodFeaturesCont = '<div class="prod-features">'+prodFeaturesTitle+'<dl></dl></div>';
+		var thisDescText = $('.ProductDescriptionContainer > p').text().toLowerCase();
+		var thisBulletsText = '';
+		var firstFeature = true;
+		$('.ProductWarrantyContainer ul li').each( function() {
+			thisBulletsText += ' ' + $(this).text().toLowerCase() + '';
+		});
+		$(DankStopGlossary.feature).each(function (i, value) {
+			if ((thisDescText.indexOf(this.name) != -1) || (thisBulletsText.indexOf(this.name) != -1) ) {
+				if (firstFeature) {
+					placingSelector.append(topSep, prodFeaturesCont);
+					firstFeature = false;
 				}
-			});
-		}
-		
-		// Product Brand
-		function prodBrand() {
-			var bN = '%%GLOBAL_BrandName%%';
-			var bO = DankStopGlossary.brand['%%GLOBAL_BrandName%%'] ? DankStopGlossary.brand['%%GLOBAL_BrandName%%'] : false;
-			if (bO) {
-				var bU = bO.url;
-				var bL = bO.logo;
-				var bD = $('<div>').html(bO.description).text();
-				var brandLogo = '<div class="brand-banner"><div class="brand-logo"><a href="'+bU+'">';
-					brandLogo += '<img id="_logo6" itemprop="logo" class="brand-image" src="'+bL;
-					brandLogo += '" alt="'+bN+' Logo" height="100"></a></div>';
-				var brandName = '<div class="brand-info"><h3 class="brand-name"><a href="'+bU;
-					brandName += '">'+bN+'</a></h3>';
-				var brandDesc = '<p>'+bD+'</p></div></div>';
-				var brandInfo = $('<div />').html(brandLogo + brandName + brandDesc);
-				placingSelector.append(topSep, brandInfo);
+				var prodFeatureName = '<dt><span>'+this.name+'</span></dt>';
+				var prodFeatureText = '<dd><span>'+this.def+'</span></dd>';
+				var prodFeature = ''+prodFeatureName+prodFeatureText+'';
+				$('.prod-features').show();
+				$('.prod-features dl').show().append(prodFeature);
 			}
+		});
+	}
+	
+	// Product Brand
+	function prodBrand() {
+		var bN = '%%GLOBAL_BrandName%%';
+		var bO = DankStopGlossary.brand['%%GLOBAL_BrandName%%'] ? DankStopGlossary.brand['%%GLOBAL_BrandName%%'] : false;
+		if (bO) {
+			var bU = bO.url;
+			var bL = bO.logo;
+			var bD = $('<div>').html(bO.description).text();
+			var brandLogo = '<div class="brand-banner"><div class="brand-logo"><a href="'+bU+'">';
+				brandLogo += '<img id="_logo6" itemprop="logo" class="brand-image" src="'+bL;
+				brandLogo += '" alt="'+bN+' Logo" height="100"></a></div>';
+			var brandName = '<div class="brand-info"><h3 class="brand-name"><a href="'+bU;
+				brandName += '">'+bN+'</a></h3>';
+			var brandDesc = '<p>'+bD+'</p></div></div>';
+			var brandInfo = $('<div />').html(brandLogo + brandName + brandDesc);
+			placingSelector.append(topSep, brandInfo);
 		}
+	}
 
-		//DankStop's The Best
-		function dSB() {
-			var dsObj = DankStopGlossary.DankStop;
-			var dsTitle = dsObj.title;
-			var dsTitleText = $("<div/>").html($(dsObj.title).html()).text();
-			var dsText = dsObj.text;
-			var dsImg = '<div><i class="fa fa-trophy"></i><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
-			var dsBox = $('<div id="Dank-Stop-Best">').html('<div><div>'+$("<div/>").html(dsTitle+dsText).text()+'</div>'+dsImg+'</div>');
-			placingSelector.append("<hr class='top-sep'>");
-			placingSelector.append(dsBox);                            
-			var dankStopBoxProduct = $('.productTypeSpan');
-				dankStopBoxProduct.text(thisProdType); 
+	//DankStop's The Best
+	function dSB() {
+		var dsObj = DankStopGlossary.DankStop;
+		var dsTitle = dsObj.title;
+		var dsTitleText = $("<div/>").html($(dsObj.title).html()).text();
+		var dsText = dsObj.text;
+		var dsImg = '<div><i class="fa fa-trophy"></i><img src="'+dsObj.img+'" alt="'+dsTitleText+'" /></div>';
+		var dsBox = $('<div id="Dank-Stop-Best">').html('<div><div>'+$("<div/>").html(dsTitle+dsText).text()+'</div>'+dsImg+'</div>');
+		placingSelector.append("<hr class='top-sep'>");
+		placingSelector.append(dsBox);                            
+		var dankStopBoxProduct = $('.productTypeSpan');
+		if (thisProdType != '') {
+			dankStopBoxProduct.text(thisProdType); 
 		}
+	}
 	    
 	//  Existance checker function
 	$.fn.exists = function(callback) {
