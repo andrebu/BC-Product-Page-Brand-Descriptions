@@ -164,6 +164,53 @@
 #ProductDetails .ProductTinyImageList .MagicScroll-horizontal button.mcs-button.mcs-button-arrow:disabled {
 	display: none !important;
 }
+.purr-msg {
+	text-align: center;
+	display: block;
+	font-size: 10px;
+	margin-bottom: 10px;
+	background-color: gray;
+	padding: 3px;
+	border-radius: 3px;
+	border: 1px solid gray;
+	position: relative;
+}
+.purr-msg:after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-top: 8px solid gray;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	left: 50%;
+	top: 30px;
+}
+.purr-msg span, .purr-msg i {
+	vertical-align: middle;
+	display: inline-block;
+}
+.purr-msg i {
+	color: orange;
+	width: 15%;
+}
+.purr-msg span {
+	width: 85%;
+	color: #fff;
+}	
+.fa-circle:before {
+	content: "\f111";
+}
+.fa-exclamation:before {
+	content: "\f12a";
+}
+.fa-exclamation-circle:before {
+	content: "\f06a";
+}
+.fa-warning:before, .fa-exclamation-triangle:before {
+	content: "\f071";
+}
 @media screen and (max-width: 768px) {
 	#Dank-Stop-Best div div:first-of-type {
 		width: 100%;
@@ -1471,6 +1518,12 @@
 	};
 	
 	function checkForVideo() {
+		MagicScrollOptions = {
+			items: 'fit',
+			arrows: 'outside',
+			loop: 'off'
+		};
+		MagicScrollExtraOptions = {};
 	    // Legacy -- remove obsolete HasDemoVideo trigger for products which haven't been updated yet
 	    $("span:contains('HasDemoVideo')").exists(function() {
 	        $(this).closest('.productAttributeRow').hide();
@@ -1553,6 +1606,16 @@
 		    }
 	    }
 	};
+	
+	function purrShip() {
+		var bN = '%%GLOBAL_BrandName%%';
+		var sM = '<span class="purr-msg"><i class="fa fa-exclamation-triangle fa-2x"></i><span>For PURR Products, ';
+			sM += 'please add 1-2 business days to the above shipping estimate.</spoan></spoan>';
+		if (bN.toLowerCase() == 'purr glass') {
+			console.log(sM);
+			$('.DetailRow.qty').before(sM);
+		}
+	}
 
 	function productPageVideoInit() {
 		checkForVideo();
@@ -1560,6 +1623,7 @@
 	}
 	    
     function prodInfo() {
+	    purrShip();
 		prodType();
 		prodFeatures();
 		prodBrand();
