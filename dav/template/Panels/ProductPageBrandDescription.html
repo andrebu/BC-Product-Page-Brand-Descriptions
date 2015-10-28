@@ -1,24 +1,4 @@
 <style>
-.ProductDetailsGrid .DetailRow .ProductPrice.retail-product-price {
-	color: gray;
-	font-family: futura;
-	font-size: 16px;
-	font-weight: bolder;
-	text-decoration: line-through;
-	vertical-align: middle;
-}
-.ProductDetailsGrid .DetailRow .ProductPrice.retail-product-price strike {
-	color: #F47D77;
-	text-decoration: none;
-}
-.ProductDetailsGrid .DetailRow .ProductPrice.VariationProductPrice {
-	color: gold;
-	color: #6ADA78;
-	font-family: futura;
-	font-size: 19px;
-	font-weight: bolder;
-	vertical-align: middle;
-}
 #ProductDescription .about-this-prod .about-link {
 	text-transform: uppercase;
 }
@@ -1714,6 +1694,14 @@
 		}
 	}
 
+	function priceFormat() {
+		var p = $('.ProductMain .DetailRow.PriceRow .ProductPrice.VariationProductPrice');
+		var sP = p.text().split('.');
+		var dF = sP[0].replace(/\$/g,'<span class="price-dollars">$</span>')
+		var cF = '<span class="price-cents">'+sP[1]+'</span>';
+		p.html(dF+'.'+cF);
+	}
+
 	function productPageVideoInit() {
 		legacyVideo();
 		checkForVideo();
@@ -1721,6 +1709,7 @@
 	}
 	    
     function prodInfo() {
+	    priceFormat();
 	    purrShip();
 		prodType();
 		prodFeatures();
