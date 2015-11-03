@@ -1,461 +1,442 @@
 <style>
-#ProductDescription .about-this-prod .about-link {
-	text-transform: uppercase;
-}
-#ProductDescription .prod-features {
-	display: none;
-}
-#ProductDescription .about-this-prod {
-	font-family: futura;
-}
-#ProductDescription .about-this-prod h3,
-#ProductDescription .prod-features h3 {
-	float: none;
-	margin: 0;
-}
-#ProductDescription .prod-features h3 {
-	margin: 0 0 13px 0;
-}
-#ProductDescription .prod-features dt, 
-#ProductDescription .prod-features dd {
-	display: inline-block;
-	margin: 0;
-	vertical-align: top;
-	margin-bottom: 23px;
-}
-#ProductDescription .prod-features dt:last-of-type, 
-#ProductDescription .prod-features dd:last-child {
-	margin-bottom: 0;
-}
-#ProductDescription .prod-features dt {
-	text-transform: capitalize;
-	width: 27%;
-	margin-right: 3%;
-	position: relative;
-	z-index: 1;
-}
-#ProductDescription .prod-features dt span {
-	z-index: 1;
-	background-color: #fff;
-	padding-right: 9%;
-	display: inline-block;
-	font-family: futura;
-}
-#ProductDescription .prod-features dt:after {
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: 10px;
-	left: 0;
-	right: 0;
-	height: 0.5em;
-	border-top: 1px dashed #ededed;
-	z-index: -1;
-}
-#ProductDescription .prod-features dd {
-	width: 70%;
-}
-#ProductDescription .prod-features dd span {
-	display: block;
-	padding-top: 3px;
-	font-family: futura;
-}
-/* Product page DankStop byline description */
-#Dank-Stop-Best {
-	margin: 35px 0;
-}
-#Dank-Stop-Best div {
-	position: relative;	
-}
-#Dank-Stop-Best div div {
-	display: inline-block;
-	vertical-align: middle;
-	position: relative;
-}
-#Dank-Stop-Best div div:first-of-type {
-	width: 75%
-}
-#Dank-Stop-Best div div:first-of-type h3 {
-	color: #333;
-	font-size: 23px;
-	line-height: 27px;
-	font-family: futura;
-	font-weight: 900;
-	width: 65%;
-	margin-bottom: 10px;
-}
-#Dank-Stop-Best div div:first-of-type p {
-	margin-bottom: 10px;
-	font-family: futura;
-}
-#Dank-Stop-Best div div:nth-of-type(2) {
-	width: 25%
-}
-#Dank-Stop-Best div div:nth-of-type(2) i {
-	font-size: 30px;
-	color: #39b54a;
-	position: absolute;
-	left: 90px;
-	top: 250px;
-	position: static;
-    font-size: 200px;
-}
-#Dank-Stop-Best div div:nth-of-type(2) i:after {
-	display: block;
-	content: "#1";
-	color: #fff;
-    font-family: fantasy;
-	font-weight: 900;
-	position: absolute;
-	font-size: 8px;
-	top: 5px;
-	left: 8px;
-    font-size: 48px;
-    top: 40px;
-    left: 68px;
-}
-#Dank-Stop-Best img {
-	display: none;
-}
-#ProductDetails .ProductTinyImageList ul {
-	overflow: hidden !important;
-}
-#ProductDetails .ProductTinyImageList ul li {
-	border: 0 !important;
-	margin: 0 auto;
-	background: none;
-	display: inline-block;
-	vertical-align: middle;
-	height: 97%;
-}
-#ProductDetails .ProductTinyImageList .mcs-item { 
-	vertical-align: middle;
-}
-#ProductDetails .ProductTinyImageList .mcs-item::after, 
-#ProductDetails .ProductTinyImageList .mcs-item > a::after {
-	vertical-align: baseline;
-	display: inline;
-}
-#ProductDetails .ProductTinyImageList .mcs-item a, 
-#ProductDetails .ProductTinyImageList .mcs-item img {
-	max-width: inherit;
-}
-#ProductDetails .ProductTinyImageList ul li a,
-#videoDemoThumb .ProdVideoPlayBtn {
-	box-sizing: border-box;
-	border: 3px solid #f0efee !important;
-	border-radius: 3px;
-	-webkit-transition: border-color 137ms ease;
-	-moz-transition: border-color 137ms ease;
-	-o-transition: border-color 137ms ease;
-	transition: border-color 137ms ease;
-}
-#ProductDetails .ProductTinyImageList ul li .hovered,
-#videoDemoThumb .ProdVideoPlayBtn.hovered {
-	border-color: #999 !important;
-}
-#ProductDetails .ProductTinyImageList ul li .mt-active-selector,
-#ProductDetails .ProductTinyImageList ul li.mt-active-selector .ProdVideoPlayBtn {
-	border-color: #6ada78 !important;
-}
-#ProductDetails .ProductTinyImageList ul li .mt-active-selector.previous-thumb {
-	border-color: #f0efee !important;
-}
-#ProductDetails .ProductTinyImageList .MagicScroll-horizontal button.mcs-button.mcs-disabled,
-#ProductDetails .ProductTinyImageList .MagicScroll-horizontal button.mcs-button.mcs-button-arrow:disabled {
-	display: none !important;
-}
-.purr-msg {
-	text-align: center;
-	display: block;
-	font-size: 10px;
-	margin-bottom: 10px;
-	background-color: gray;
-	padding: 3px;
-	border-radius: 3px;
-	border: 1px solid gray;
-	position: relative;
-}
-.purr-msg:after {
-	content: '';
-	display: block;
-	width: 0;
-	height: 0;
-	position: absolute;
-	border-top: 8px solid gray;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	left: 50%;
-	top: 44px;
-}
-.purr-msg span, .purr-msg i {
-	vertical-align: middle;
-	display: inline-block;
-}
-.purr-msg i {
-	color: orange;
-	width: 15%;
-}
-.purr-msg span {
-	width: 80%;
-	color: #fff;
-	padding: 2% 5% 2% 0;
-}	
-.fa-circle:before {
-	content: "\f111";
-}
-.fa-exclamation:before {
-	content: "\f12a";
-}
-.fa-exclamation-circle:before {
-	content: "\f06a";
-}
-.fa-warning:before, .fa-exclamation-triangle:before {
-	content: "\f071";
-}
-.MagicToolboxContainer {
-	position: relative;
-	overflow: hidden;
-}
-#videoDemoBtn {
-	display: none;
-}
-@media screen and (max-width: 768px) {
+	#ProductDescription .about-this-prod .about-link {
+		text-transform: uppercase;
+	}
+	#ProductDescription .prod-features {
+		display: none;
+	}
+	#ProductDescription .about-this-prod {
+		font-family: futura;
+	}
+	#ProductDescription .about-this-prod h3,
+	#ProductDescription .prod-features h3 {
+		float: none;
+		margin: 0;
+	}
+	#ProductDescription .prod-features h3 {
+		margin: 0 0 13px 0;
+	}
+	#ProductDescription .prod-features dt, 
+	#ProductDescription .prod-features dd {
+		display: inline-block;
+		margin: 0;
+		vertical-align: top;
+		margin-bottom: 23px;
+	}
+	#ProductDescription .prod-features dt:last-of-type, 
+	#ProductDescription .prod-features dd:last-child {
+		margin-bottom: 0;
+	}
+	#ProductDescription .prod-features dt {
+		text-transform: capitalize;
+		width: 27%;
+		margin-right: 3%;
+		position: relative;
+		z-index: 1;
+	}
+	#ProductDescription .prod-features dt span {
+		z-index: 1;
+		background-color: #fff;
+		padding-right: 9%;
+		display: inline-block;
+		font-family: futura;
+	}
+	#ProductDescription .prod-features dt:after {
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		right: 0;
+		height: 0.5em;
+		border-top: 1px dashed #ededed;
+		z-index: -1;
+	}
+	#ProductDescription .prod-features dd {
+		width: 70%;
+	}
+	#ProductDescription .prod-features dd span {
+		display: block;
+		padding-top: 3px;
+		font-family: futura;
+	}
+	/* Product page DankStop byline description */
+	#Dank-Stop-Best {
+		margin: 35px 0;
+	}
+	#Dank-Stop-Best div {
+		position: relative;	
+	}
+	#Dank-Stop-Best div div {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+	}
 	#Dank-Stop-Best div div:first-of-type {
-		width: 100%;
+		width: 75%
 	}
 	#Dank-Stop-Best div div:first-of-type h3 {
-		width: 60%;
+		color: #333;
+		font-size: 23px;
+		line-height: 27px;
+		font-family: futura;
+		font-weight: 900;
+		width: 65%;
+		margin-bottom: 10px;
+	}
+	#Dank-Stop-Best div div:first-of-type p {
+		margin-bottom: 10px;
+		font-family: futura;
 	}
 	#Dank-Stop-Best div div:nth-of-type(2) {
-		position: absolute;
-		top: -7px;
-		right: 0;
-		width: auto;
+		width: 25%
 	}
 	#Dank-Stop-Best div div:nth-of-type(2) i {
-		font-size: 10em;
+		font-size: 30px;
+		color: #39b54a;
+		position: absolute;
+		left: 90px;
+		top: 250px;
+		position: static;
+	    font-size: 200px;
 	}
 	#Dank-Stop-Best div div:nth-of-type(2) i:after {
-		font-size: 0.25em;
-		top: 0.8em;
-		left: 1.4em;
+		display: block;
+		content: "#1";
+		color: #fff;
+	    font-family: fantasy;
+		font-weight: 900;
+		position: absolute;
+		font-size: 8px;
+		top: 5px;
+		left: 8px;
+	    font-size: 48px;
+	    top: 40px;
+	    left: 68px;
+	}
+	#Dank-Stop-Best img {
+		display: none;
+	}
+	#ProductDetails .ProductTinyImageList ul {
+		overflow: hidden !important;
 	}
 	#ProductDetails .ProductTinyImageList ul li {
-		margin: 0 auto;			
-		height: auto;
+		border: 0 !important;
+		margin: 0 auto;
+		background: none;
+		display: inline-block;
+		vertical-align: middle;
+		height: 97%;
 	}
-	#ProductDetails .ProductTinyImageList ul li#videoDemoThumb {
-		height: 100%;
-    }
-	#ProductDetails .ProductTinyImageList ul li a, 
+	#ProductDetails .ProductTinyImageList .mcs-item { 
+		vertical-align: middle;
+	}
+	#ProductDetails .ProductTinyImageList .mcs-item::after, 
+	#ProductDetails .ProductTinyImageList .mcs-item > a::after {
+		vertical-align: baseline;
+		display: inline;
+	}
+	#ProductDetails .ProductTinyImageList .mcs-item a, 
+	#ProductDetails .ProductTinyImageList .mcs-item img {
+		max-width: inherit;
+	}
+	#ProductDetails .ProductTinyImageList ul li a,
 	#videoDemoThumb .ProdVideoPlayBtn {
-		height: 100%;
+		box-sizing: border-box;
+		border: 3px solid #f0efee !important;
+		border-radius: 3px;
+		-webkit-transition: border-color 137ms ease;
+		-moz-transition: border-color 137ms ease;
+		-o-transition: border-color 137ms ease;
+		transition: border-color 137ms ease;
+	}
+	#ProductDetails .ProductTinyImageList ul li .hovered,
+	#videoDemoThumb .ProdVideoPlayBtn.hovered {
+		border-color: #999 !important;
+	}
+	#ProductDetails .ProductTinyImageList ul li .mt-active-selector,
+	#ProductDetails .ProductTinyImageList ul li.mt-active-selector .ProdVideoPlayBtn {
+		border-color: #6ada78 !important;
+	}
+	#ProductDetails .ProductTinyImageList ul li .mt-active-selector.previous-thumb {
+		border-color: #f0efee !important;
+	}
+	#ProductDetails .ProductTinyImageList .MagicScroll-horizontal button.mcs-button.mcs-disabled,
+	#ProductDetails .ProductTinyImageList .MagicScroll-horizontal button.mcs-button.mcs-button-arrow:disabled {
+		display: none !important;
+	}
+	.purr-msg {
+		text-align: center;
+		display: block;
+		font-size: 10px;
+		margin-bottom: 10px;
+		background-color: gray;
+		padding: 3px;
+		border-radius: 3px;
+		border: 1px solid gray;
+		position: relative;
+	}
+	.purr-msg:after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		position: absolute;
+		border-top: 8px solid gray;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		left: 50%;
+		top: 44px;
+	}
+	.purr-msg span, .purr-msg i {
+		vertical-align: middle;
+		display: inline-block;
+	}
+	.purr-msg i {
+		color: orange;
+		width: 15%;
+	}
+	.purr-msg span {
+		width: 80%;
+		color: #fff;
+		padding: 2% 5% 2% 0;
+	}	
+	.fa-circle:before {
+		content: "\f111";
+	}
+	.fa-exclamation:before {
+		content: "\f12a";
+	}
+	.fa-exclamation-circle:before {
+		content: "\f06a";
+	}
+	.fa-warning:before, .fa-exclamation-triangle:before {
+		content: "\f071";
+	}
+	.MagicToolboxContainer {
+		position: relative;
+		overflow: hidden;
 	}
 	#videoDemoBtn {
 		display: none;
-		right: 0px;
-		top: 0px;
+	}
+	/* Brand Logo container */
+	.top-sep {
+		margin: 35px 0;
+		padding: 0;
+		height: 3px;
+		background: #ededed;
+		border-width: 0;
+	}
+	.brand-banner {
+		width: 91%;
+		padding: 10px;
+		border: 1px solid #ededed;
+		border-radius: 4px;
+		-webkit-transition: all .1s linear;
+		transition: all .1s linear;
+		margin: 0 auto 20px;
+	}
+	.brand-banner .brand-logo {
+		height: auto;
+		overflow: auto;
+		margin: 0 auto;
+		display: inline-block;
+		position: relative;
+		padding: 0 20px;
+		vertical-align: middle;
+	}
+	.brand-banner .brand-logo a {
+		display: block;
+		margin: 0 auto;
+	}
+	.brand-banner .brand-image {
+		margin: 0 auto;
+		display: block;
+		width: 100px;
+	}
+	.brand-banner .brand-info {
+		width: 77%;
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+		font-family: futura;
+	}
+	.brand-banner .brand-info .brand-name {
+		padding: 5px 0 5px;
+		clear: right;
+		display: inline-block;
+	}
+	.brand-banner .brand-info .brand-name a {
+		color: #39b54a;
+		font-size: 17px;
+	}
+	.brand-banner .brand-description {
+		display: block;
+		position: relative;
+		width: 89%;
+		margin: 0px auto 20px;
+	}
+	/* Product Page Video CSS */
+	#videoDemoBtn {
+		width: 70px;
+		height: 73px;
+		border-radius: 60px;
+		position: absolute;
+		cursor: pointer;
+		z-index: 13;
+		display: none;
+		clip: rect(auto, auto, auto, auto);
+		background-color: #39B54A;
+		right: 0;
+		top: 0;
+		display:none !important;
+	}
+	#videoDemoBtn.videoPlaying {
+		background-color: #e53b2c;
+	}
+	#videoDemoBtn .triangle {
+		width: 0px;
+		height: 0px;
+		left: 28px;
+		top: 12px;
+		position: absolute;
+		border-top: 8px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-left: 16px solid #fff;
+		z-index: 1;
+		border-radius: 2px;
+		color: #fff;
+	}
+	#videoDemoBtn .triangle:after {
+		content: "Show Video";
+		position: absolute;
+		left: -28px;
+		top: 12px;
+		text-transform: uppercase;
+	}
+	#videoDemoBtn.videoPlaying .triangle {
+		border: 8px solid #fff;
+		left: 26px;
+		top: 12px;
+	}
+	#videoDemoBtn.videoPlaying .triangle:after {
+		content: "Hide Video";
+		left: -18px;
+	}
+	.ProductList li:hover #videoDemoBtn {
 		opacity: 1;
 	}
-}
+	#prodVid {
+		position: absolute;
+		top: -1%;
+		bottom: -1%;
+		left: -1%;
+		right: -1%;
+		width: 102%;
+		height: 102%;
+	}
+	#prodVid video {
+		height: 100%;
+		width: 100%;
+	}
+	.ProductDetailsGrid .productAttributeList {
+	}
+	#videoDemoThumb {
+		cursor: pointer;
+		height:%%GLOBAL_ProductTinyBoxHeight%%px;
+		width:%%GLOBAL_ProductTinyBoxWidth%%px;
+	}
+	#videoDemoThumb .ProdVideoPlayBtn {
+		position: relative;
+		background-color: #39B54A;
+		height: 100%;
+		display: block;
+	}
+	#videoDemoThumb .triangle {
+		width: 0px;
+		height: 0px;
+		left: 18px;
+		top: 12px;
+		position: absolute;
+		border-top: 10px solid transparent !important;
+		border-bottom: 12px solid transparent !important;
+		border-left: 23px solid white!important;
+		z-index: 1;
+		border-radius: 2px;
+	}
+	/* Play Video Button */
+	#videoDemoThumb .triangle:after {
+		content:" Play \\A Video";
+		position: absolute;
+		left: -29px;
+		top: 18px;
+		color: #fff;
+		text-transform: uppercase;
+		white-space: pre;
+	}
+	/* Stop Video Button */
+	#videoDemoThumb.videoPlaying .ProdVideoPlayBtn {
+		background-color: #DD4B39;
+	}
+	#videoDemoThumb.videoPlaying .triangle {
+		border: 10px solid #fff !important;
+	}
+	#videoDemoThumb.videoPlaying .triangle:after {
+		content:" Stop \\A Video";
+		left: -17px;
+	}
+	
+	@media screen and (max-width: 767px) {
+		.brand-banner .brand-logo {
+			display: block;
+			padding: 20px;
+		}
+		.brand-banner .brand-info {
+			display: block;
+		}
+		#Dank-Stop-Best div div:first-of-type {
+			width: 100%;
+		}
+		#Dank-Stop-Best div div:first-of-type h3 {
+			width: 60%;
+		}
+		#Dank-Stop-Best div div:nth-of-type(2) {
+			position: absolute;
+			top: -7px;
+			right: 0;
+			width: auto;
+		}
+		#Dank-Stop-Best div div:nth-of-type(2) i {
+			font-size: 10em;
+		}
+		#Dank-Stop-Best div div:nth-of-type(2) i:after {
+			font-size: 0.25em;
+			top: 0.8em;
+			left: 1.4em;
+		}
+		#ProductDetails .ProductTinyImageList ul li {
+			margin: 0 auto;			
+			height: auto;
+		}
+		#ProductDetails .ProductTinyImageList ul li#videoDemoThumb {
+			height: 100%;
+	    }
+		#ProductDetails .ProductTinyImageList ul li a, 
+		#videoDemoThumb .ProdVideoPlayBtn {
+			height: 100%;
+		}
+		#videoDemoBtn {
+			display: none;
+			right: 0px;
+			top: 0px;
+			opacity: 1;
+		}
+	}
 </style>
 <script type="text/javascript">    
-/* Add CSS to <head> */
-    $('<style type="text/css">\
-        /* Brand Logo container */\
-         .top-sep {\
-            margin: 35px 0;\
-            padding: 0;\
-            height: 3px;\
-            background: #ededed;\
-            border-width: 0;\
-        }\
-        .brand-banner {\
-            width: 91%;\
-            padding: 10px;\
-            border: 1px solid #ededed;\
-            border-radius: 4px;\
-            -webkit-transition: all .1s linear;\
-            transition: all .1s linear;\
-            margin: 0 auto 20px;\
-        }\
-         .brand-banner .brand-logo {\
-            //width: 19%;\
-            height: auto;\
-            overflow: auto;\
-            margin: 0 auto;\
-            display: inline-block;\
-            position: relative;\
-            //float: left;\
-            //line-height: 100%;\
-            //font-size: 150px;\
-            padding: 0 20px;\
-            vertical-align: middle;\
-        }\
-         .brand-banner .brand-logo a {\
-            display: block;\
-            margin: 0 auto;\
-        }\
-        .brand-banner .brand-image {\
-            //height: 100px;\
-            margin: 0 auto;\
-            display: block;\
-            width: 100px;\
-        }\
-        .brand-banner .brand-info {\
-            width: 77%;\
-            margin: 0 auto;\
-            position: relative;\
-            text-align: center;\
-            display: inline-block;\
-            vertical-align: middle;\
-			font-family: futura;\
-        }\
-        .brand-banner .brand-info .brand-name {\
-            padding: 5px 0 5px;\
-            clear: right;\
-            display: inline-block;\
-        }\
-        .brand-banner .brand-info .brand-name a {\
-            color: #39b54a;\
-            font-size: 17px;\
-        }\
-        .brand-banner .brand-description {\
-            display: block;\
-            position: relative;\
-            width: 89%;\
-            margin: 0px auto 20px;\
-        }\
-        @media screen and (max-width: 767px) {\
-            .brand-banner .brand-logo {\
-                display: block;\
-                padding: 20px;\
-            }\
-            .brand-banner .brand-info {\
-                display: block;\
-            }\
-        }\
-        .JointSizeHeightContainer .DetailRow:nth-child(3) {\
-            display:none;\
-        }\
-        .JointSizeHeightContainer .ProductOtherDetails .ProductDetailsGrid .DetailRow:nth-child(2) {\
-            padding-left: 10%; \
-        }\
-		// Product Page Demo Videos\
-	    /* Product Page Video CSS */\
-	    #videoDemoBtn {\
-	        width: 70px;\
-	        height: 73px;\
-	        border-radius: 60px;\
-	        position: absolute;\
-	        cursor: pointer;\
-	        z-index: 13;\
-	        display: none;\
-	        clip: rect(auto, auto, auto, auto);\
-	        background-color: #39B54A;\
-			right: 0;\
-			top: 0;\
-			display:none !important;\
-	    }\
-	    #videoDemoBtn.videoPlaying {\
-	        background-color: #e53b2c;\
-	    }\
-	    #videoDemoBtn .triangle {\
-	        width: 0px;\
-	        height: 0px;\
-	        left: 28px;\
-	        top: 12px;\
-	        position: absolute;\
-	        border-top: 8px solid transparent;\
-	        border-bottom: 10px solid transparent;\
-	        border-left: 16px solid #fff;\
-	        z-index: 1;\
-	        border-radius: 2px;\
-	        color: #fff;\
-	    }\
-	    #videoDemoBtn .triangle:after {\
-	        content: "Show Video";\
-	        position: absolute;\
-	        left: -28px;\
-	        top: 12px;\
-	        text-transform: uppercase;\
-	    }\
-	    #videoDemoBtn.videoPlaying .triangle {\
-	        border: 8px solid #fff;\
-	        left: 26px;\
-	        top: 12px; \
-	    }\
-	    #videoDemoBtn.videoPlaying .triangle:after {\
-	        content: "Hide Video";\
-	        left: -18px;\
-	    }\
-	    .ProductList li:hover #videoDemoBtn {\
-	        opacity: 1;\
-	    }\
-	    #prodVid {\
-	        position: absolute;\
-			top: -1%;\
-			bottom: -1%;\
-			left: -1%;\
-			right: -1%;\
-	        width: 102%;\
-			height: 102%;\
-	    }\
-	    #prodVid video {\
-	        height: 100%;\
-	        width: 100%;\
-	    }\
-	    .ProductDetailsGrid .productAttributeList {\
-	        /*     display: none; */\
-	    }\
-	    #videoDemoThumb {\
-	        cursor: pointer;\
-			height:%%GLOBAL_ProductTinyBoxHeight%%px;\
-			width:%%GLOBAL_ProductTinyBoxWidth%%px;\
-	    }\
-	    #videoDemoThumb .ProdVideoPlayBtn {\
-	        position: relative;\
-	        background-color: #39B54A;\
-	        height: 100%;\
-	        display: block;\
-	    }\
-	    #videoDemoThumb .triangle {\
-	        width: 0px;\
-	        height: 0px;\
-	        left: 18px;\
-	        top: 12px;\
-	        position: absolute;\
-	        border-top: 10px solid transparent !important;\
-	        border-bottom: 12px solid transparent !important;\
-	        border-left: 23px solid white!important;\
-	        z-index: 1;\
-	        border-radius: 2px;\
-	    }\
-	    /* Play Video Button */\
-	    #videoDemoThumb .triangle:after {\
-	        content:" Play \\A Video";\
-	        position: absolute;\
-	        left: -29px;\
-	        top: 18px;\
-	        color: #fff;\
-	        text-transform: uppercase;\
-	        white-space: pre;\
-	    }\
-	    /* Stop Video Button */\
-	    #videoDemoThumb.videoPlaying .ProdVideoPlayBtn {\
-	        background-color: #DD4B39;\
-	    }\
-	    #videoDemoThumb.videoPlaying .triangle {\
-	        border: 10px solid #fff !important;\
-	    }\
-	    #videoDemoThumb.videoPlaying .triangle:after {\
-	        content:" Stop \\A Video";\
-	        left: -17px;\
-	    }\
-        </style>')
-        .appendTo('head');
-
 
 	var DankStopGlossary = {
   "DankStop": {
