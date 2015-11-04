@@ -1679,13 +1679,9 @@
 			}
 	        function playDemoVideo() {
 				$('.magictoolbox-li a.mt-active-selector').addClass('previous-thumb');
-				//$('.ProductThumbImage, .MagicToolboxContainer').append(videoContainer);
-				//pVC.hide();
 				$(playStopBtns).addClass('videoPlaying mt-active-selector');
-				//pVC.show();
 				player.playVideo();
 				pVC.addClass('videoPlaying');
-				pVC.css('height', $('.MagicToolboxContainer').height() + 'px');
 				if (!pVC.hasClass('yTV')) {
 					var video = document.getElementById('demoVideo');
 					if (video) video.play();
