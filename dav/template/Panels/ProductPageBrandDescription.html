@@ -339,6 +339,9 @@
 		height: 102%;
 		z-index: -1;
 	}
+	#prodVid.videoPlaying {
+		z-index: 1;
+	}
 	#prodVid video {
 		height: 100%;
 		width: 100%;
@@ -1681,8 +1684,8 @@
 				$(playStopBtns).addClass('videoPlaying mt-active-selector');
 				//pVC.show();
 				player.playVideo();
-				pVC.css('z-index','1');
-				pVC.css('height', $('.ProductThumbImage').height() + 'px');
+				pVC.addClass('videoPlaying');
+				pVC.css('height', $('.MagicToolboxContainer').height() + 'px');
 				if (!pVC.hasClass('yTV')) {
 					var video = document.getElementById('demoVideo');
 					if (video) video.play();
@@ -1696,7 +1699,7 @@
 		    }
 		    function stopDemoVideo() {
 				$(playStopBtns).removeClass('videoPlaying mt-active-selector');
-				pVC.css('z-index','-1');
+				pVC.removeClass('videoPlaying');
 				//destroy thumbOnClick stop event
 			    $('.magictoolbox-li a').off('click', clickThumbStopVideo);
 				player.stopVideo();
