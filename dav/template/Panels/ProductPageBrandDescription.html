@@ -1729,6 +1729,28 @@
 		mPF.html('<span>'+dF+'.'+cF+'</span> + '+mPFT);
 	}
 
+	function newInputSty() {
+		$('#InStockNotifyEmailAddress').focus(function(){
+			console.log('focused!');
+			$(this).parents('.OutOfStockMessage.InfoMessage').addClass('isFocused');
+		}).blur(function(){
+			$(this).parents('.OutOfStockMessage.InfoMessage').removeClass('isFocused');
+		});
+	}
+	
+	
+	function checkDOMChange() {
+		if ($('#ProductDetails .ProductMain .yotpo.bottomLine.yotpo-small').length) {
+			$('#ProductDetails .ProductMain .yotpo.bottomLine.yotpo-small').addClass('loaded');
+			setTimeout(function(){ $('#ProductDetails .ProductMain .yotpo.bottomLine.yotpo-small').animate({ opacity: 1 }, 700); }, 1737);
+			return;
+		}
+	    // call the function again after 100 milliseconds
+	    setTimeout( checkDOMChange, 100 );
+	}
+
+
+	// Initialization - init - inits
 	function productPageVideoInit() {
 		legacyVideo();
 		checkForVideo();
@@ -1736,6 +1758,7 @@
 	}
 	    
     function prodInfo() {
+	    checkDOMChange();
 	    priceFormat();
 	    purrShip();
 		prodType();
@@ -1747,15 +1770,8 @@
     
     prodInfo();
 
-	function checkDOMChange() {
-		if ($('#ProductDetails .ProductMain .yotpo.bottomLine.yotpo-small').length) {
-			$('#ProductDetails .ProductMain .yotpo.bottomLine.yotpo-small').addClass('loaded');
-			setTimeout(function(){ $('#ProductDetails .ProductMain .yotpo.bottomLine.yotpo-small').animate({ opacity: 1 }, 700); }, 1737);
-			return;
-		}
-	    // call the function again after 100 milliseconds
-	    setTimeout( checkDOMChange, 100 );
-	}
-	checkDOMChange();
-
+	$(window).load(function() {
+			    newInputSty();
+	});
+	
 </script>
