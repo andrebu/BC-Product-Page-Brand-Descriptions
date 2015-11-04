@@ -1592,16 +1592,7 @@
 	//load Youtube Script
 	var player;
 	function onYouTubeIframeAPIReady() {
-		player = new YT.Player('yTV', {
-			playerVars: { 'autoplay': 0, 
-						'controls': 0, 
-						'enablejsapi': 1,
-						'autoplay': 1,
-						'modestbranding': 1,
-						'showinfo': 0,
-						'controls': 0,
-						'rel': 0 },
-		});
+		player = new YT.Player('yTV');
 	}
 	function loadYTS() {
 	    var tag = document.createElement('script');
@@ -1627,8 +1618,8 @@
 			if (DankStopGlossary.videos[productNumber] != 'yes') {
 				var vidId = DankStopGlossary.videos[productNumber];
 				var wLO = window.location.origin;
-				//enablejsapi=1&autoplay=1&modestbranding=1&showinfo=0&controls=0&rel=0&
-				var yTParams = '?theme=light&fs=0';
+				//&autoplay=1
+				var yTParams = '?enablejsapi=1&modestbranding=1&showinfo=0&controls=0&rel=0&theme=light&fs=0';
 					yTParams += '&loop=1&playlist='+ vidId + '&origin=' + wLO;
 	            var videoContainer = '<div id="prodVid" class="yTV"><iframe id="yTV" src="https://www.youtube.com/embed/'; 
 	            	videoContainer += '' + vidId + yTParams +'" height="100%" width="100%" ';
