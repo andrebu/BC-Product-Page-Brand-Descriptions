@@ -1592,7 +1592,16 @@
 	//load Youtube Script
 	var player;
 	function onYouTubeIframeAPIReady() {
-		player = new YT.Player('yTV');
+		player = new YT.Player('yTV', {
+			playerVars: { 'autoplay': 0, 
+						'controls': 0, 
+						'enablejsapi': 1,
+						'autoplay': 1,
+						'modestbranding': 1,
+						'showinfo': 0,
+						'controls': 0,
+						'rel': 0 },
+		});
 	}
 	function loadYTS() {
 	    var tag = document.createElement('script');
@@ -1618,8 +1627,8 @@
 			if (DankStopGlossary.videos[productNumber] != 'yes') {
 				var vidId = DankStopGlossary.videos[productNumber];
 				var wLO = window.location.origin;
-				//
-				var yTParams = '?enablejsapi=1&autoplay=1&modestbranding=1&showinfo=0&controls=0&rel=0&theme=light&fs=0';
+				//enablejsapi=1&autoplay=1&modestbranding=1&showinfo=0&controls=0&rel=0&
+				var yTParams = '?theme=light&fs=0';
 					yTParams += '&loop=1&playlist='+ vidId + '&origin=' + wLO;
 	            var videoContainer = '<div id="prodVid" class="yTV"><iframe id="yTV" src="https://www.youtube.com/embed/'; 
 	            	videoContainer += '' + vidId + yTParams +'" height="100%" width="100%" ';
@@ -1683,32 +1692,7 @@
 				player.playVideo();
 				pVC.css('z-index','1');
 				pVC.css('height', $('.ProductThumbImage').height() + 'px');
-				if (pVC.hasClass('yTV')) {
-					//if (window.browserIsMobileOrTablet()) {
-/*
-						function readyYoutube() {
-						    if (YT && YT.Player){
-								var player;
-								player = new YT.Player('yTV', {
-									events: {
-										'onReady': onPlayerReady,
-										'onStateChange': onPlayerStateChange
-									}
-								});
-								function onPlayerReady(event) {
-									event.target.playVideo();
-								}
-								function onPlayerStateChange(event) {
-									event.target.playVideo();
-								}
-						    } else{
-						        setTimeout(readyYoutube, 100);
-						    }
-						}
-						readyYoutube();
-*/
-					//}
-				} else {
+				if (!pVC.hasClass('yTV')) {
 					var video = document.getElementById('demoVideo');
 					if (video) video.play();
 				}
@@ -1734,7 +1718,6 @@
 		var sM = '<span class="purr-msg"><i class="fa fa-exclamation-triangle fa-2x"></i><span>For this product, ';
 			sM += 'please add 1-2 business days to the above shipping estimate.</spoan></spoan>';
 		if (bN.toLowerCase() == 'purr glass') {
-			console.log(sM);
 			$('.DetailRow.qty').before(sM);
 		}
 	}
