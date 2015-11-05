@@ -1745,6 +1745,10 @@
 			}
 		});
 	}
+	// re-initialize if selector html is changed
+	$('.OutOfStockMessage').on('DOMSubtreeModified', function() {
+		newInputSty();
+	});
 	
 	
 	function checkDOMChange() {
