@@ -1731,10 +1731,16 @@
 
 	function newInputSty() {
 		$('#InStockNotifyEmailAddress').focus(function(){
-			console.log('focused!');
 			$(this).parents('.OutOfStockMessage.InfoMessage').addClass('isFocused');
 		}).blur(function(){
 			$(this).parents('.OutOfStockMessage.InfoMessage').removeClass('isFocused');
+		});
+		$('#InStockNotifyEmailAddress').on('keyup', function(e){
+			if ($(this).val() != '') {
+				$(this).parents('.OutOfStockMessage').addClass('hasValue');
+			} else {
+				$(this).parents('.OutOfStockMessage').removeClass('hasValue');
+			}
 		});
 	}
 	
